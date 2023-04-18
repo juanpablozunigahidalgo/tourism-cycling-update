@@ -3,10 +3,12 @@
 Long time ago. I developed an html / javascript / website. However. I decedided to move it to react - typescript . 
 The old project remains available at. 
 https://github.com/juanpablozunigahidalgo/toursimcycling.github.io
+www.tourismcycling.com
 
 I make this project to apply MUI design libriaries. To build a complete website based on design libriaries instead. 
 The challenge now. For this one. Is to have a user registration page. In which cyclists can register themselves in case optional. 
 
+I kept minimalistic design principle. And usability focus. 
 
 # open-invite
 
