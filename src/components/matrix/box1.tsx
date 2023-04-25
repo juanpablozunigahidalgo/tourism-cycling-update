@@ -27,7 +27,7 @@ const boxData = [
     },
   ];
   
-  const box1 = () => {
+  const Box1 = () => {
     return <BoxGrid boxData={boxData} />;
   };    
-  export default box1;
+  export default Box1;
