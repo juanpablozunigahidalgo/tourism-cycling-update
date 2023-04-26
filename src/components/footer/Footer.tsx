@@ -6,12 +6,12 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: '#fff', color: '#000', py: 4, width: '100%' }}>
-      <Container maxWidth="xl" sx={{ display: 'flex', alignItems: 'left', width: '100%' }}>
+    <Box sx={{ bgcolor: '#fff', color: '#000', py: 4, width: '100%', pt: '4rem' }}>
+      <Container maxWidth={false} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
         <Typography variant="body1">
           <p>For cyclists.</p>
         </Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <a href="https://www.facebook.com/"><FacebookIcon sx={{ color: 'black', mx: 1 }} /></a>
           <a href="https://www.instagram.com/"><InstagramIcon sx={{ color: 'black', mx: 1 }} /></a>
           <a href="https://github.com/"><GitHubIcon sx={{ color: 'black', mx: 1 }} /></a>

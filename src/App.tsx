@@ -12,6 +12,7 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import theme from './styles/main/typography';
 import Box from '@mui/material/Box';
 import Box1 from './components/matrix/box1';
+import Pagetitle from './components/pagetitle/pagetitle';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         minHeight="100vh"
       >
         <Header />
+        <Pagetitle></Pagetitle>
         <Box flexGrow={1}>
           <Container maxWidth="lg">
             {/* <ImageSection /> */}
