@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 import Container from '@mui/material/Container';
 // import ImageSection from './components/imagesection/imagesection';
 
