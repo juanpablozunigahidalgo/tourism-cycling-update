@@ -6,7 +6,7 @@ interface Props {
 
 const BoxGrid: React.FC<Props> = ({ boxData }) => {
   return (
-    <div style={{ marginTop: '10vh' }}>
+    <div style={{ marginTop: '2vh' }}>
       <Grid container spacing={4}>
         {boxData.map((box, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
