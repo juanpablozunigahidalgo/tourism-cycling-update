@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <AppBar position="static" sx={{backgroundColor: 'white', color: 'black', boxShadow: 'none'}}>
-      <Toolbar sx={{display: 'flex', alignItems: 'center'}}>
+      <Toolbar sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <IconButton
           size="large"
           edge="start"
@@ -37,7 +37,6 @@ const Header = () => {
           <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
         </Menu>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'black' }}>
-         
         </Typography>
         <Button color="inherit" sx={{ color: 'black', backgroundColor: '#EEEEEE' }}>Login</Button>
       </Toolbar>
@@ -46,10 +45,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
-
-
-
-
