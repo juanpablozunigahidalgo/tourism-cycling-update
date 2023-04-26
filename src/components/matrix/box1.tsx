@@ -2,29 +2,29 @@ import BoxGrid from "./boxprop";
 
 const boxData = [
     {
-      text: 'Box 1',
-      link: '/box1',
+      text: 'Route & Cost Calculator',
+      link: '/route',
     },
     {
-      text: 'Box 2',
-      link: '/box2',
+      text: 'Equipment Calculator',
+      link: '/equipment',
     },
     {
-      text: 'Box 3',
-      link: '/box3',
+      text: 'Preparation',
+      link: '/preparation',
     },
     {
-      text: 'Box 4',
-      link: '/box4',
+      text: 'Bike Check',
+      link: '/bikecheck',
     },
     {
-      text: 'Box 5',
-      link: '/box5',
+      text: 'Knowledge',
+      link: '/knowledge',
     },
     {
-      text: 'Box 6',
-      link: '/box6',
-    },
+      text: 'Recomended Apps',
+      link: '/recomendedapps',
+    }
   ];
   
   const Box1 = () => {

@@ -4,19 +4,19 @@ import './App.css';
 import Container from '@mui/material/Container';
 // import ImageSection from './components/imagesection/imagesection';
 
-import Footer from './components/footer/footer';
-import Header from './components/header/header';
 
 
-import ThemeProvider from '@mui/material/styles/ThemeProvider';
-import theme from './styles/main/typography';
+import { ThemeProvider } from '@mui/material/styles';
+
 import Box from '@mui/material/Box';
-import Box1 from './components/matrix/box1';
-import Pagetitle from './components/pagetitle/pagetitle';
+import theme from '../styles/main/typography';
+import Header from '../components/header/header';
+import Pagetitle from '../components/pagetitle/pagetitle';
+import Footer from '../components/footer/footer';
+import Box1 from '../components/matrix/box1';
 
 
-
-function App() {
+const Home = (): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -28,7 +28,6 @@ function App() {
         <Pagetitle></Pagetitle>
         <Box flexGrow={1}>
           <Container maxWidth="lg">
-            {/* <ImageSection /> */}
             <Box1></Box1>
           </Container>
         </Box>
@@ -38,4 +37,4 @@ function App() {
   );
 };
 
-export default App;
+export default Home;
