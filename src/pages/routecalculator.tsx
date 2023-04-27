@@ -9,6 +9,7 @@ import Header from '../components/header/header';
 import Pagetitle from '../components/pagetitle/pagetitle';
 import Footer from '../components/footer/footer';
 import Box1 from '../components/matrix/box1';
+import InputMap from '../components/inputroute/inputmap';
 
 
 const Home = (): JSX.Element => {
@@ -21,11 +22,7 @@ const Home = (): JSX.Element => {
       >
         <Header />
         <Pagetitle></Pagetitle>
-        <Box flexGrow={1}>
-          <Container maxWidth="lg">
-            <Box1></Box1>
-          </Container>
-        </Box>
+        
         <Footer />
       </Box>
     </ThemeProvider>

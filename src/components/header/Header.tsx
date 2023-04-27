@@ -37,8 +37,13 @@ const Header = () => {
           sx={{ right: 0 }}
         >
           <MenuItem onClick={handleMenuClose}>Home</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Products</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Route & Cost Calculator</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Equipment Calculator</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Preparation</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Bike Check</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Knowledge</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Recomended Apps</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
