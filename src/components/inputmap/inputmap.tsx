@@ -16,7 +16,7 @@ const InputMapStart: React.FC<InputMapStartProps> = ({ onPlaceSelected }) => {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAl-NAQCJ332WGr3zqsAwvTmf5z8O88zrA&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=&libraries=places`;
     script.async = true;
     script.onload = handleScriptLoad;
     document.body.appendChild(script);
