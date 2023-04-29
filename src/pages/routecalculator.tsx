@@ -8,11 +8,12 @@ import theme from '../styles/main/typography';
 import Header from '../components/header/header';
 import Pagetitle from '../components/pagetitle/pagetitle';
 import Footer from '../components/footer/footer';
-import Box1 from '../components/matrix/box1';
-import InputMap from '../components/inputroute/inputmap';
+import InputMapStart from '../components/inputmap/inputmap';
 
 
-const Home = (): JSX.Element => {
+
+
+const Routecost = (): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -22,11 +23,13 @@ const Home = (): JSX.Element => {
       >
         <Header />
         <Pagetitle></Pagetitle>
-        
+        <InputMapStart onPlaceSelected={function (place: google.maps.places.PlaceResult): void {
+          throw new Error('Function not implemented.');
+        } }></InputMapStart>
         <Footer />
       </Box>
     </ThemeProvider>
   );
 };
 
-export default Home;
+export default Routecost;

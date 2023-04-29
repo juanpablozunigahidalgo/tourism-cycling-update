@@ -9,7 +9,7 @@ const Footer = () => {
     <Box sx={{ bgcolor: '#fff', color: '#000', py: 4, width: '100%', pt: '4rem' }}>
       <Container maxWidth={false} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
         <Typography variant="body1">
-          <p>For cyclists.</p>
+          For cyclists.
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <a href="https://www.facebook.com/"><FacebookIcon sx={{ color: 'black', mx: 1 }} /></a>
