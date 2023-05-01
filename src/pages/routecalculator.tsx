@@ -9,6 +9,8 @@ import Header from '../components/header/header';
 import Pagetitle from '../components/pagetitle/pagetitle';
 import Footer from '../components/footer/footer';
 import InputMapStart from '../components/inputmap/inputmap';
+import SearchForm from '../components/inputmap/inputmapp';
+
 
 
 
@@ -16,6 +18,8 @@ import InputMapStart from '../components/inputmap/inputmap';
 const Routecost = (): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl-NAQCJ332WGr3zqsAwvTmf5z8O88zrA&libraries=places"></script>
+
       <Box
         display="flex"
         flexDirection="column"
@@ -23,9 +27,7 @@ const Routecost = (): JSX.Element => {
       >
         <Header />
         <Pagetitle></Pagetitle>
-        <InputMapStart onPlaceSelected={function (place: google.maps.places.PlaceResult): void {
-          throw new Error('Function not implemented.');
-        } }></InputMapStart>
+        <SearchForm></SearchForm>
         <Footer />
       </Box>
     </ThemeProvider>

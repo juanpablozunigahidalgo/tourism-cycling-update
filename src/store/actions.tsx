@@ -1,21 +1,24 @@
-import { setInitaddress } from './initaddressslice';
-import { setDestaddress } from './destaddressslice';
-import { setMode } from './modeslice';
+export const SET_INITIAL_ADDRESS = 'SET_INITIAL_ADDRESS';
+export const SET_DESTINATION_ADDRESS = 'SET_DESTINATION_ADDRESS';
 
-export const setInitialAddress = (address: any) => {
-  return (dispatch: (arg0: { payload: any; type: "initaddress/setInitaddress"; }) => void) => {
-    dispatch(setInitaddress(address));
-  };
-};
+export interface SetInitialAddressAction {
+  type: typeof SET_INITIAL_ADDRESS;
+  payload: string;
+}
 
-export const setDestinationAddress = (address: any) => {
-  return (dispatch: (arg0: { payload: any; type: "destaddress/setDestaddress"; }) => void) => {
-    dispatch(setDestaddress(address));
-  };
-};
+export interface SetDestinationAddressAction {
+  type: typeof SET_DESTINATION_ADDRESS;
+  payload: string;
+}
 
-export const setTravelMode = (mode: any) => {
-  return (dispatch: (arg0: { payload: any; type: "mode/setMode"; }) => void) => {
-    dispatch(setMode(mode));
-  };
-};
+export const setInitialAddress = (address: string): SetInitialAddressAction => ({
+  type: SET_INITIAL_ADDRESS,
+  payload: address,
+});
+
+export const setDestinationAddress = (address: string): SetDestinationAddressAction => ({
+  type: SET_DESTINATION_ADDRESS,
+  payload: address,
+});
+
+export type SearchFormActionTypes = SetInitialAddressAction | SetDestinationAddressAction;

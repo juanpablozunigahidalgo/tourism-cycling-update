@@ -1,14 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
-import initaddressReducer from './initaddressSlice';
-import destaddressReducer from './destaddressSlice';
-import modeReducer from './modeSlice';
+import { createStore } from 'redux';
+import { searchFormReducer } from './reducers';
 
-const store = configureStore({
-  reducer: {
-    initialAddress: initaddressReducer,
-    destinationAddress: destaddressReducer,
-    travelMode: modeReducer
-  }
-});
-
-export default store;
+export const store = createStore(searchFormReducer);
