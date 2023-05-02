@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Grid, Select, MenuItem } from '@mui/material';
+import Mapdisplay from './mapdisplay';
 
 interface Props {}
 
@@ -61,62 +62,63 @@ const SearchForm: React.FC<Props> = () => {
 
 
   return (
-    <div
-      style={{
-        paddingLeft: '5%',
-        paddingRight: '5%',
-        maxWidth:'600px',
-        minHeight:'400px',
-      }}
-    >
-      <Grid container spacing={2}>
-        <Grid item xs={12} style={{ display: 'flex', flexDirection: 'column' }}>
-          <TextField
-            id="initialAddress"
-            label="Initial Address"
-            variant="outlined"
-            fullWidth
-            value={initialAddress}
-            onChange={handleInitialAddressInputChange}
-            inputRef={(input) => input && initAutocomplete(input, true)}
-            style={{ marginBottom: '1rem' }}
-          />
-          <TextField
-            id="destinationAddress"
-            label="Destination Address"
-            variant="outlined"
-            fullWidth
-            value={destinationAddress}
-            onChange={handleDestinationAddressInputChange}
-            style={{ marginBottom: '1rem' }}
-            inputRef={(input) => input && initAutocomplete(input, false)}
-          />
-          <Select
-            labelId="travelMode-label"
-            id="Traveling"
-            value={travelingMode}
-            onChange={(e) => handleTravelModeChange(e.target.value)}
-            label="Travel Mode"
-            variant="outlined"
-            fullWidth
-            style={{ marginBottom: '0rem' }}
-          >
-            <MenuItem value={google.maps.TravelMode.DRIVING}>Driving</MenuItem>
-            <MenuItem value={google.maps.TravelMode.BICYCLING}>Cycling</MenuItem>
-            <MenuItem value={google.maps.TravelMode.WALKING}>Walking</MenuItem>
-          </Select>
-        </Grid>
-        <Grid item xs={12}>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: 'gray', color: 'black', maxWidth: '200px' }}
-            onClick={handleSearch}
-          >
-            Search
-          </Button>
-        </Grid>
-      </Grid>
-    </div>
+    <><div
+          style={{
+              paddingLeft: '5%',
+              paddingRight: '5%',
+              maxWidth: '600px',
+              minHeight: '400px',
+          }}
+      >
+          <Grid container spacing={2}>
+              <Grid item xs={12} style={{ display: 'flex', flexDirection: 'column' }}>
+                  <TextField
+                      id="initialAddress"
+                      label="Initial Address"
+                      variant="outlined"
+                      fullWidth
+                      value={initialAddress}
+                      onChange={handleInitialAddressInputChange}
+                      inputRef={(input) => input && initAutocomplete(input, true)}
+                      style={{ marginBottom: '1rem' }} />
+                  <TextField
+                      id="destinationAddress"
+                      label="Destination Address"
+                      variant="outlined"
+                      fullWidth
+                      value={destinationAddress}
+                      onChange={handleDestinationAddressInputChange}
+                      style={{ marginBottom: '1rem' }}
+                      inputRef={(input) => input && initAutocomplete(input, false)} />
+                  <Select
+                      labelId="travelMode-label"
+                      id="Traveling"
+                      value={travelingMode}
+                      onChange={(e) => handleTravelModeChange(e.target.value)}
+                      label="Travel Mode"
+                      variant="outlined"
+                      fullWidth
+                      style={{ marginBottom: '0rem' }}
+                  >
+                      <MenuItem value={google.maps.TravelMode.DRIVING}>Driving</MenuItem>
+                      <MenuItem value={google.maps.TravelMode.BICYCLING}>Cycling</MenuItem>
+                      <MenuItem value={google.maps.TravelMode.WALKING}>Walking</MenuItem>
+                  </Select>
+              </Grid>
+              <Grid item xs={12}>
+                  <Button
+                      variant="contained"
+                      style={{ backgroundColor: 'gray', color: 'black', maxWidth: '200px' }}
+                      onClick={handleSearch}
+                  >
+                      Search
+                  </Button>
+              </Grid>
+          </Grid>
+      </div>
+      <div>
+      <Mapdisplay initialAddress={initialAddress} destinationAddress={destinationAddress} ></Mapdisplay>
+      </div></>
   );
 };
 

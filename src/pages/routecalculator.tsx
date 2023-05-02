@@ -20,7 +20,6 @@ const Routecost = (): JSX.Element => {
         <Header />
         <Pagetitle></Pagetitle>
         <SearchForm></SearchForm>
-        <Mapdisplay></Mapdisplay>
         <Footer />
       </Box>
     </ThemeProvider>
