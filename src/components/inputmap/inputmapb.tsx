@@ -7,7 +7,7 @@ interface Props {}
 const SearchForm: React.FC<Props> = () => {
   const [initialAddress, setInitialAddressState] = useState<string>('');
   const [destinationAddress, setDestinationAddressState] = useState<string>('');
-  const [travelingMode, setTravelingModeState] = useState<string>('');
+  const [travelingMode, setTravelingModeState] =  useState<google.maps.TravelMode>(google.maps.TravelMode.DRIVING)
 
   const handleSearch = () => {
     console.log(initialAddress);
@@ -56,7 +56,7 @@ const SearchForm: React.FC<Props> = () => {
     setDestinationAddressState(event.target.value);
   };
 
-  const handleTravelModeChange = (value: string) => {
+  const handleTravelModeChange = (value: any) => {
     setTravelingModeState(value);
   };
 
@@ -117,7 +117,7 @@ const SearchForm: React.FC<Props> = () => {
           </Grid>
       </div>
       <div>
-      <Mapdisplay initialAddress={initialAddress} destinationAddress={destinationAddress} ></Mapdisplay>
+      <Mapdisplay initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode}></Mapdisplay>
       </div></>
   );
 };
