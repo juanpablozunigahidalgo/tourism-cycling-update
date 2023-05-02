@@ -12,10 +12,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl-NAQCJ332WGr3zqsAwvTmf5z8O88zrA&libraries=places"></script>
     <Provider store={store}>
-    <CssBaseline />
-    <App />
+      <CssBaseline />
+      <App />
     </Provider>
   </React.StrictMode>
 );

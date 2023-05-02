@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { TextField, Button, Grid } from '@mui/material';
 
 interface Props {}
 
 const SearchForm: React.FC<Props> = () => {
-
   const [initialAddress, setInitialAddressState] = useState<string>('');
   const [destinationAddress, setDestinationAddressState] = useState<string>('');
 
@@ -27,7 +27,6 @@ const SearchForm: React.FC<Props> = () => {
   ) => {
     const autocomplete = new window.google.maps.places.Autocomplete(input, {
       types: ['geocode'],
-      // componentRestrictions: { country: 'us' },
     });
 
     autocomplete.addListener('place_changed', () => {
@@ -55,26 +54,44 @@ const SearchForm: React.FC<Props> = () => {
   };
 
   return (
-    
-    <div>
-      
-      <label htmlFor="initialAddress">Initial Address:</label>
-      <input
-        id="initialAddress"
-        type="text"
-        value={initialAddress}
-        onChange={handleInitialAddressInputChange}
-        ref={(input) => input && initAutocomplete(input, true)}
-      />
-      <label htmlFor="destinationAddress">Destination Address:</label>
-      <input
-        id="destinationAddress"
-        type="text"
-        value={destinationAddress}
-        onChange={handleDestinationAddressInputChange}
-        ref={(input) => input && initAutocomplete(input, false)}
-      />
-      <button onClick={handleSearch}>Search</button>
+    <div
+      style={{
+        paddingLeft: '5%',
+        paddingRight: '5%',
+      }}
+    >
+      <Grid container spacing={2}>
+        <Grid item xs={12} style={{ display: 'flex', flexDirection: 'column' }}>
+          <TextField
+            id="initialAddress"
+            label="Initial Address"
+            variant="outlined"
+            fullWidth
+            value={initialAddress}
+            onChange={handleInitialAddressInputChange}
+            inputRef={(input) => input && initAutocomplete(input, true)}
+            style={{ marginBottom: '1rem' }}
+          />
+          <TextField
+            id="destinationAddress"
+            label="Destination Address"
+            variant="outlined"
+            fullWidth
+            value={destinationAddress}
+            onChange={handleDestinationAddressInputChange}
+            inputRef={(input) => input && initAutocomplete(input, false)}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Button
+            variant="contained"
+            style={{ backgroundColor: 'gray', color: 'black', maxWidth: '200px' }}
+            onClick={handleSearch}
+          >
+            Search
+          </Button>
+        </Grid>
+      </Grid>
     </div>
   );
 };

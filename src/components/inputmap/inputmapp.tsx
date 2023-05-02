@@ -7,12 +7,13 @@ interface Props {}
 
 const SearchForm: React.FC<Props> = () => {
 
-  
   const [initialAddress, setInitialAddressState] = useState<string>('');
   const [destinationAddress, setDestinationAddressState] = useState<string>('');
   const dispatch = useDispatch();
 
   const handleSearch = () => {
+    console.log(initialAddress);
+    console.log(destinationAddress);
     dispatch(setInitialAddress(initialAddress));
     dispatch(setDestinationAddress(destinationAddress));
   };
