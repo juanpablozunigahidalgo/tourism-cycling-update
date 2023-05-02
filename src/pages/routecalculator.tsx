@@ -6,6 +6,7 @@ import Header from '../components/header/header';
 import Pagetitle from '../components/pagetitle/pagetitle';
 import Footer from '../components/footer/footer';
 import SearchForm from '../components/inputmap/inputmapb';
+import Mapdisplay from '../components/inputmap/mapdisplay';
 
 
 
@@ -22,6 +23,7 @@ const Routecost = (): JSX.Element => {
         <Header />
         <Pagetitle></Pagetitle>
         <SearchForm></SearchForm>
+        <Mapdisplay></Mapdisplay>
         <Footer />
       </Box>
     </ThemeProvider>
