@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Grid, Select, MenuItem } from '@mui/material';
 import Mapdisplay from './mapdisplay';
+import DistanceCalculator from './distanceengine';
 
 interface Props {}
 
@@ -118,7 +119,11 @@ const SearchForm: React.FC<Props> = () => {
       </div>
       <div>
       <Mapdisplay initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode}></Mapdisplay>
-      </div></>
+      </div>
+      <div>
+      <DistanceCalculator initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode}></DistanceCalculator>    
+      </div>
+      </>
   );
 };
 
