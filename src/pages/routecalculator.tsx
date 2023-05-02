@@ -8,12 +8,9 @@ import Footer from '../components/footer/footer';
 import SearchForm from '../components/inputmap/inputmapb';
 import Mapdisplay from '../components/inputmap/mapdisplay';
 
-
-
-
-
 const Routecost = (): JSX.Element => {
   return (
+    
     <ThemeProvider theme={theme}> 
       <Box
         display="flex"

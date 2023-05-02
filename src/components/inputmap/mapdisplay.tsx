@@ -7,7 +7,7 @@ interface MapProps {
   travelingMode?: google.maps.TravelMode;
 }
 
-const europeCenter = { lat: 50, lng: 10 };
+const europeCenter = { lat: 51.1657, lng: 10.4515 };
 
 const Mapdisplay: React.FC<MapProps> = ({
   initialAddress,
@@ -33,11 +33,27 @@ const Mapdisplay: React.FC<MapProps> = ({
           }
         }
       );
+    } else {
+      setDirections(null); // set directions to null if no initialAddress or destinationAddress is provided
     }
   }, [initialAddress, destinationAddress, travelingMode]);
 
+  const mapContainerStyle = {
+    width: "90%",
+    height: "400px",
+    marginLeft: "5%",
+   
+  };
+
+  const center = directions ? undefined : europeCenter;
+
   return (
-    <GoogleMap center={europeCenter} zoom={4}>
+    
+    <GoogleMap
+      mapContainerStyle={mapContainerStyle}
+      center={center}
+      zoom={3}
+    >
       {directions && <DirectionsRenderer directions={directions} />}
     </GoogleMap>
   );

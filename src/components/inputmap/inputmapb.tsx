@@ -11,7 +11,7 @@ const SearchForm: React.FC<Props> = () => {
   const handleSearch = () => {
     console.log(initialAddress);
     console.log(destinationAddress);
-    console.log(travelingMode);
+    console.log(travelingMode); 
   };
 
   const handlePlaceSelect = (
