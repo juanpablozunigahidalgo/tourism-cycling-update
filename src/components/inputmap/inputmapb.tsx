@@ -157,37 +157,49 @@ const SearchForm: React.FC<Props> = () => {
                       style={{ marginBottom: '1rem' }}
                       inputRef={(input) => input && initAutocomplete(input, false)} />
                   <TextField
-            id="estimatedAverageSpeed"
-            label="Estimated average speed"
-            variant="outlined"
-            fullWidth
-            value={estimatedAverageSpeed}
-            onChange={handleEstimatedAverageSpeedInputChange}
-            style={{ marginBottom: '1rem' }} />
-        <TextField
-            id="estimatedHoursPerDayCycling"
-            label="Estimated hours per day cycling"
-            variant="outlined"
-            fullWidth
-            value={estimatedHoursPerDayCycling}
-            onChange={handleEstimatedHoursPerDayCyclingInputChange}
-            style={{ marginBottom: '1rem' }} />
-        <TextField
-            id="restingDays"
-            label="Resting days"
-            variant="outlined"
-            fullWidth
-            value={restingDays}
-            onChange={handleRestingDaysInputChange}
-            style={{ marginBottom: '1rem' }} />
-        <TextField
-            id="budgetPerDay"
-            label="Your budget per day"
-            variant="outlined"
-            fullWidth
-            value={budgetPerDay}
-            onChange={handleBudgetPerDayInputChange}
-            style={{ marginBottom: '1rem' }} />
+                    id="estimatedAverageSpeed"
+                    label="Estimated average speed"
+                    variant="outlined"
+                    placeholder="enter in km/h"
+                    fullWidth
+                    type="number"
+                    value={estimatedAverageSpeed === 0 ? '' : estimatedAverageSpeed}
+                    onChange={handleEstimatedAverageSpeedInputChange}
+                    style={{ marginBottom: '1rem' }}
+                  />
+                  <TextField
+                    id="estimatedHoursPerDayCycling"
+                    label="Estimated hours per day cycling"
+                    placeholder="enter hours/day"
+                    variant="outlined"
+                    fullWidth
+                    type="number"
+                    value={estimatedHoursPerDayCycling === 0 ? '' : estimatedHoursPerDayCycling}
+                    onChange={handleEstimatedHoursPerDayCyclingInputChange}
+                    style={{ marginBottom: '1rem' }}
+                  />
+                  <TextField
+                    id="restingDays"
+                    label="Resting days"
+                    variant="outlined"
+                    placeholder="enter in days"
+                    fullWidth
+                    type="number"
+                    value={restingDays === 0 ? '' : restingDays}
+                    onChange={handleRestingDaysInputChange}
+                    style={{ marginBottom: '1rem' }}
+                  />
+                  <TextField
+                    id="budgetPerDay"
+                    label="Your budget per day"
+                    placeholder="enter in usd/day"
+                    variant="outlined"
+                    fullWidth
+                    type="number"
+                    value={budgetPerDay === 0 ? '' : budgetPerDay}
+                    onChange={handleBudgetPerDayInputChange}
+                    style={{ marginBottom: '1rem' }}
+                  />
                   <Select
                       labelId="Travellin Mode"
                       id="Traveling"
