@@ -2,13 +2,62 @@ import React, { useState } from 'react';
 import { TextField, Button, Grid, Select, MenuItem } from '@mui/material';
 import Mapdisplay from './mapdisplay';
 import DistanceCalculator from './distanceengine';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 interface Props {}
+
+const theme = createTheme({
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiInputBase-input': {
+            color: 'black', // Change input text color
+          },
+          '& .MuiInputLabel-root': {
+            color: 'black', // Change input label color
+            '&.Mui-focused': {
+              color: 'black', // Change input label color on focus
+            },
+          },
+          '& .MuiOutlinedInput-root': {
+            '&.Mui-focused fieldset': {
+              borderColor: 'black', // Change border color on focus
+            },
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: {
+          '&:hover:not(.Mui-disabled):before': {
+            borderColor: 'black', // Change select menu border color on hover
+          },
+          '&:before': {
+            borderColor: 'black', // Change select menu border color
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: 'black', // Change border color on focus
+          },
+        },
+        icon: {
+          color: 'black', // Change select menu icon color
+        },
+      },
+    },
+  },
+});
+
 
 const SearchForm: React.FC<Props> = () => {
   const [initialAddress, setInitialAddressState] = useState<string>('');
   const [destinationAddress, setDestinationAddressState] = useState<string>('');
   const [travelingMode, setTravelingModeState] =  useState<google.maps.TravelMode>(google.maps.TravelMode.DRIVING)
+  const [estimatedAverageSpeed, setEstimatedAverageSpeed] = useState(0);
+  const [estimatedHoursPerDayCycling, setEstimatedHoursPerDayCycling] = useState(0);
+  const [restingDays, setRestingDays] = useState(0);
+  const [budgetPerDay, setBudgetPerDay] = useState(0);
 
   const handleSearch = () => {
     console.log(initialAddress);
@@ -61,17 +110,33 @@ const SearchForm: React.FC<Props> = () => {
     setTravelingModeState(value);
   };
 
+  const handleEstimatedAverageSpeedInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEstimatedAverageSpeed(parseFloat(event.target.value));
+  };
+
+  const handleEstimatedHoursPerDayCyclingInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEstimatedHoursPerDayCycling(parseFloat(event.target.value));
+  };
+
+  const handleRestingDaysInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRestingDays(parseInt(event.target.value));
+  };
+
+  const handleBudgetPerDayInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setBudgetPerDay(parseFloat(event.target.value));
+  };
 
   return (
     <><div
           style={{
               paddingLeft: '5%',
               paddingRight: '5%',
-              maxWidth: '600px',
-              minHeight: '400px',
+              maxWidth: '500px',
+              minHeight: '200px',
           }}
       >
-          <Grid container spacing={2}>
+          <ThemeProvider theme={theme}>
+          <Grid container spacing={1}>
               <Grid item xs={12} style={{ display: 'flex', flexDirection: 'column' }}>
                   <TextField
                       id="initialAddress"
@@ -91,8 +156,40 @@ const SearchForm: React.FC<Props> = () => {
                       onChange={handleDestinationAddressInputChange}
                       style={{ marginBottom: '1rem' }}
                       inputRef={(input) => input && initAutocomplete(input, false)} />
+                  <TextField
+            id="estimatedAverageSpeed"
+            label="Estimated average speed"
+            variant="outlined"
+            fullWidth
+            value={estimatedAverageSpeed}
+            onChange={handleEstimatedAverageSpeedInputChange}
+            style={{ marginBottom: '1rem' }} />
+        <TextField
+            id="estimatedHoursPerDayCycling"
+            label="Estimated hours per day cycling"
+            variant="outlined"
+            fullWidth
+            value={estimatedHoursPerDayCycling}
+            onChange={handleEstimatedHoursPerDayCyclingInputChange}
+            style={{ marginBottom: '1rem' }} />
+        <TextField
+            id="restingDays"
+            label="Resting days"
+            variant="outlined"
+            fullWidth
+            value={restingDays}
+            onChange={handleRestingDaysInputChange}
+            style={{ marginBottom: '1rem' }} />
+        <TextField
+            id="budgetPerDay"
+            label="Your budget per day"
+            variant="outlined"
+            fullWidth
+            value={budgetPerDay}
+            onChange={handleBudgetPerDayInputChange}
+            style={{ marginBottom: '1rem' }} />
                   <Select
-                      labelId="travelMode-label"
+                      labelId="Travellin Mode"
                       id="Traveling"
                       value={travelingMode}
                       onChange={(e) => handleTravelModeChange(e.target.value)}
@@ -106,7 +203,7 @@ const SearchForm: React.FC<Props> = () => {
                       <MenuItem value={google.maps.TravelMode.WALKING}>Walking</MenuItem>
                   </Select>
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                   <Button
                       variant="contained"
                       style={{ backgroundColor: 'gray', color: 'black', maxWidth: '200px' }}
@@ -114,14 +211,15 @@ const SearchForm: React.FC<Props> = () => {
                   >
                       Search
                   </Button>
-              </Grid>
+              </Grid> */}
           </Grid>
+          </ThemeProvider>
+      </div>
+      <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
+      <DistanceCalculator initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode}></DistanceCalculator>    
       </div>
       <div>
       <Mapdisplay initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode}></Mapdisplay>
-      </div>
-      <div>
-      <DistanceCalculator initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode}></DistanceCalculator>    
       </div>
       </>
   );

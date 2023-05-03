@@ -36,8 +36,8 @@ const DistanceCalculator: React.FC<Props> = ({
   }, [initialAddress, destinationAddress, travelingMode]);
 
   return (
-    <Typography sx={{ fontFamily: "Consolas", paddingTop: "5%", paddingLeft: "5%" }}>
-      Total distance: {totalDistance} km.
+    <Typography sx={{ fontFamily: "Consolas", paddingLeft: "5%" , fontSize: "1rem"}}>
+      Total distance: <span style={{ fontWeight: 600 }}>{totalDistance}</span> km.
     </Typography>
   );
 };
