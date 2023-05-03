@@ -228,10 +228,10 @@ const SearchForm: React.FC<Props> = () => {
           </ThemeProvider>
       </div>
       <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
-      <DistanceCalculator initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode}></DistanceCalculator>    
+      <DistanceCalculator initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode} estimatedAverageSpeed={estimatedAverageSpeed} estimatedHoursPerDayCycling={estimatedHoursPerDayCycling} restingDays={restingDays} budgetPerDay={budgetPerDay} ></DistanceCalculator>    
       </div>
       <div>
-      <Mapdisplay initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode}></Mapdisplay>
+      <Mapdisplay initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode} ></Mapdisplay>
       </div>
       </>
   );
