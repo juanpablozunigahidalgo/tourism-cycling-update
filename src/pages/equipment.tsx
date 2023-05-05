@@ -6,12 +6,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import theme from '../styles/main/typography';
 import Header from '../components/header/header';
-import Pagetitle from '../components/pagetitle/pagetitle';
+import Pagetitler from '../components/pagetitle/pagetitleequipment';
 import Footer from '../components/footer/footer';
-import Box1 from '../components/matrix/box1';
+import Formequipment from '../components/equipmentengine/equipmentengine';
 
 
-const Home = (): JSX.Element => {
+
+const Equipment = (): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -20,16 +21,12 @@ const Home = (): JSX.Element => {
         minHeight="60vh"
       >
         <Header />
-        <Pagetitle></Pagetitle>
-        <Box flexGrow={1}>
-          <Container maxWidth="lg">
-            <Box1></Box1>
-          </Container>
-        </Box>
+        <Pagetitler></Pagetitler>
+        <Formequipment></Formequipment>
         <Footer />
       </Box>
     </ThemeProvider>
   );
 };
 
-export default Home;
+export default Equipment;

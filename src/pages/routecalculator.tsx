@@ -5,8 +5,8 @@ import theme from '../styles/main/typography';
 import Header from '../components/header/header';
 import Pagetitle from '../components/pagetitle/pagetitle';
 import Footer from '../components/footer/footer';
-import SearchForm from '../components/inputmap/inputmapb';
-import Mapdisplay from '../components/inputmap/mapdisplay';
+import SearchForm from '../components/mapengine/inputmapb';
+import Mapdisplay from '../components/mapengine/mapdisplay';
 import Titler from '../components/pagetitle/pagetitleroute';
 
 const Routecost = (): JSX.Element => {
