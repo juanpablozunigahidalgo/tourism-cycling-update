@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Select, MenuItem, FormControl, InputLabel } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 interface FormState {
   minimumTripTemperature: number;
@@ -7,6 +9,50 @@ interface FormState {
   camping: number;
   rain: number;
 }
+
+const theme = createTheme({
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiInputBase-input': {
+            color: '#000000', // Change input text color
+          },
+          '& .MuiInputLabel-root': {
+            color: '#000000', // Change input label color
+            '&.Mui-focused': {
+              color: '#000000', // Change input label color on focus
+            },
+          },
+          '& .MuiOutlinedInput-root': {
+            '&.Mui-focused fieldset': {
+              borderColor: '#000000', // Change border color on focus
+            },
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: {
+          '&:hover:not(.Mui-disabled):before': {
+            borderColor: '#000000', // Change select menu border color on hover
+          },
+          '&:before': {
+            borderColor: '#000000', // Change select menu border color
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: '#000000', // Change border color on focus
+          },
+        },
+        icon: {
+          color: '#000000', // Change select menu icon color
+        },
+      },
+    },
+  },
+});
+
 
 const Form = () => {
   const [formState, setFormState] = useState<FormState>({ tripLength: 0, camping: 1, minimumTripTemperature:5, rain:1 });
@@ -41,55 +87,77 @@ const Form = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <TextField
-        label="Trip Length"
-        type="number"
-        value={formState.tripLength}
-        onChange={handleTripLengthChange}
-        name="tripLength"
-        margin="normal"
-      />
-      <TextField
-        label="Minimum Trip Temperature"
-        type="number"
-        value={formState.minimumTripTemperature}
-        onChange={handleMinimumTripTemperatureChange}
-        name="tripLength"
-        margin="normal"
-      />
-      <FormControl margin="normal">
-        <InputLabel>Camping</InputLabel>
-        <Select
-          value={selectedCamping}
-          onChange={handleCampingChange}
-          name="camping"
-          inputProps={{
-            style: { color: 'black', border: '1px solid black' },
+    <>
+    <div
+          style={{
+              paddingLeft: '5%',
+              paddingRight: '5%',
+              maxWidth: '500px',
+              minHeight: '200px',
           }}
-        >
-          <MenuItem value={1}>Yes- I will camp during the route.</MenuItem>
-          <MenuItem value={0}>No - I will not camp during the route.</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl margin="normal">
-        <InputLabel>Rain</InputLabel>
-        <Select
-          value={selectedRain}
-          onChange={handleRainChange}
-          name="rain"
-          inputProps={{
-            style: { color: 'black', border: '1px solid black' },
-          }}
-        >
-          <MenuItem value={1}>Yes- It will rain on the route.</MenuItem>
-          <MenuItem value={0}>No - It will not rain on the route.</MenuItem>
-        </Select>
-      </FormControl>
-      <Button variant="contained" color="primary" onClick={handleSearch}>
-        Search
-      </Button>
+      >
+        <ThemeProvider theme={theme}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <TextField
+              variant="outlined" fullWidth
+              label="Trip Length"
+              type="number"
+              value={formState.tripLength}
+              placeholder="Enter in number of days"
+              onChange={handleTripLengthChange}
+              name="tripLength"
+              style={{ marginBottom: '1rem', border:'#000000'}}
+            />
+            <TextField
+              label="Minimum Trip Temperature"
+              type="number"
+              placeholder="Enter in Celcius degree"
+              variant="outlined" fullWidth
+              value={formState.minimumTripTemperature}
+              onChange={handleMinimumTripTemperatureChange}
+              name="tripLength"
+              style={{ marginBottom: '1rem' }}
+            />
+            <FormControl margin="normal">
+              <InputLabel>Camping</InputLabel>
+              <Select
+                value={selectedCamping}
+                onChange={handleCampingChange}
+                variant="outlined"
+                name="camping"
+                style={{ marginBottom: '0rem' }}
+                inputProps={{
+                  style: { color: 'black', border: '1px solid black' },
+                }}
+              >
+                <MenuItem value={1}>Yes- I will camp during the route.</MenuItem>
+                <MenuItem value={0}>No - I will not camp during the route.</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl margin="normal">
+              <InputLabel>Rain</InputLabel>
+              <Select
+                value={selectedRain}
+                onChange={handleRainChange}
+                variant="outlined"
+                name="rain"
+                style={{ marginBottom: '0rem' }}
+                inputProps={{
+                  style: { color: 'black', border: '1px solid black' },
+                }}
+              >
+                <MenuItem value={1}>Yes- It will rain on the route.</MenuItem>
+                <MenuItem value={0}>No - It will not rain on the route.</MenuItem>
+              </Select>
+            </FormControl>
+            <Button variant="contained"
+                            style={{ marginTop: '18px', backgroundColor: 'gray', color: 'black', maxWidth: '200px' }} onClick={handleSearch}>
+              Search
+            </Button>
+          </div>
+        </ThemeProvider>
     </div>
+    </>
   );
 };
 
