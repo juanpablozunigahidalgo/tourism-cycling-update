@@ -193,12 +193,12 @@ export const calculateEquipment  = ({
   };
 };
 //Second Function
-export function calculateEquipment2({
+export const calculateEquipment2  = ({
+  tripLength,
   camping,
   minimumTripTemperature,
   rain,
-  tripLength,
-}: Props)  {
+}: Props) => {
   var helmq;
   var multitq;
   var stubeq;
@@ -259,15 +259,25 @@ export function calculateEquipment2({
  totalhealthbodyw2=((suncq*suncw)+(lightfirstaidq*lightfirstaidw))/1000;
  totaldocumv=((docuq*docuv));
  totaldocumw=((docuq*docuw))/1000;
+ return {
+  totalbikerelatedv,
+  totalbikerelatedw,
+  totalelectronicsv,
+  totalelectronicsw,
+  totalhealthbodyv2,
+  totalhealthbodyw2,
+  totaldocumv,
+  totaldocumw,
+ };
 };
 
 // Third Function. Written to fix the clothing equipment.
-export function calculateEquipment3({
+export const calculateEquipment3  = ({
+  tripLength,
   camping,
   minimumTripTemperature,
   rain,
-  tripLength,
-}: Props) {
+}: Props) => {
   var tshirtq;
   var fleeceq;
   var lwindjq;
@@ -452,13 +462,25 @@ export function calculateEquipment3({
 //poner aqui la suma del equipo
 totalropav=((tshirtq*tshirtv)+(fleeceq*fleecev)+(lwindjq*lwindjv)+(wpjackq*wpjackv)+(tjackq*tjackv)+(fllegsq*fllegsv)+(flsleevsq*flsleevsv)+(lwpantq*lwpantv)+(skiq*skiv)+(shortq*shortv)+(boxerq*boxerv)+(socketq*socketv)+(gloveq*glovev)+(shoeq*shoev)+(capq*capv)+(feetq*feetv)+(neckq*neckv)+(towellq*towellv));
 totalropaw=((tshirtq*tshirtw)+(fleeceq*fleecew)+(lwindjq*lwindjw)+(wpjackq*wpjackw)+(tjackq*tjackw)+(fllegsq*fllegsw)+(flsleevsq*flsleevsw)+(lwpantq*lwpantw)+(skiq*skiw)+(shortq*shortw)+(boxerq*boxerw)+(socketq*socketw)+(gloveq*glovew)+(shoeq*shoew)+(capq*capw)+(feetq*feetw)+(neckq*neckw)+(towellq*towellw))/1000;
+return {
+  totalropav,
+  totalropaw,
+};
+
+
 };
 
 //Resuming totals function here.
 //This part of the code will sum up the weight the ciclist will bring for the trip.
 export function calculateEquipment4() {
+  
   volumenresume = Math.round((totalropav+totalbikerelatedv+totalelectronicsv+totalhealthbodyv2+totaldocumv+totalcampingv+totalhealthbodyv1));
   weightresume = Math.round((totalropaw+totalbikerelatedw+totalelectronicsw+totalhealthbodyw2+totaldocumw+totalcampingw+totalhealthbodyw1));
+
+  return {
+    volumenresume,
+    weightresume
+  };
 };
 
 
