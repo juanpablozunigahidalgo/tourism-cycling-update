@@ -124,19 +124,19 @@ var volumenresume: number;
 var weightresume: number;
 var graphf;
 //Interface to handle the Props. It is standard. 
-interface Props {
+export interface Props {
     camping: number;
     minimumTripTemperature: number;
     rain: number;
     tripLength: number;
   }
 //First Function. 
-function calculateEquipment({
+export const calculateEquipment  = ({
+  tripLength,
   camping,
   minimumTripTemperature,
   rain,
-  tripLength,
-}: Props) {
+}: Props) => {
   let tentq, matresq, slepbq, pilloq, headq, floorinsq, potq, cupq, utensilq,
     stoveq, canisterq, igniterq, petrolq, detergentq, dishcq, soapq, tbrushq, tpasteq;
   
@@ -180,13 +180,20 @@ function calculateEquipment({
     tpasteq = 0;
   };
   // poner aqui la suma del equipo.
-  totalcampingv = ((tentq*tentv)+(matresq*matresv)+(slepbq*slepbv)+(pilloq*pillov)+(headq*headv)+(floorinsq*floorinsv)+(potq*potv)+(cupq*cupv)+(utensilq*utensilv)+(stoveq*stovev)+(canisterq*canisterv)+(igniterq*igniterv)+(petrolq*petrolv)+(detergentq*detergentv)+(dishcq*dishcv));
-  totalcampingw = ((tentq*tentw)+(matresq*matresw)+(slepbq*slepbw)+(pilloq*pillow)+(headq*headw)+(floorinsq*floorinsw)+(potq*potw)+(cupq*cupw)+(utensilq*utensilw)+(stoveq*stovew)+(canisterq*canisterw)+(igniterq*igniterw)+(petrolq*petrolw)+(detergentq*detergentw)+(dishcq*dishcw))/1000;
-  totalhealthbodyv1=((soapq*soapv)+(tbrushq*tbrushv)+(tpasteq*tpastev));
-  totalhealthbodyw1=((soapq*soapw)+(tbrushq*tbrushw)+(tpasteq*tpastew))/1000;
+  const totalcampingv = ((tentq*tentv)+(matresq*matresv)+(slepbq*slepbv)+(pilloq*pillov)+(headq*headv)+(floorinsq*floorinsv)+(potq*potv)+(cupq*cupv)+(utensilq*utensilv)+(stoveq*stovev)+(canisterq*canisterv)+(igniterq*igniterv)+(petrolq*petrolv)+(detergentq*detergentv)+(dishcq*dishcv));
+  const totalcampingw = ((tentq*tentw)+(matresq*matresw)+(slepbq*slepbw)+(pilloq*pillow)+(headq*headw)+(floorinsq*floorinsw)+(potq*potw)+(cupq*cupw)+(utensilq*utensilw)+(stoveq*stovew)+(canisterq*canisterw)+(igniterq*igniterw)+(petrolq*petrolw)+(detergentq*detergentw)+(dishcq*dishcw))/1000;
+  const totalhealthbodyv1=((soapq*soapv)+(tbrushq*tbrushv)+(tpasteq*tpastev));
+  const totalhealthbodyw1=((soapq*soapw)+(tbrushq*tbrushw)+(tpasteq*tpastew))/1000;
+
+  return {
+    totalcampingv,
+    totalcampingw,
+    totalhealthbodyv1,
+    totalhealthbodyw1,
+  };
 };
 //Second Function
-function calculateEquipment2({
+export function calculateEquipment2({
   camping,
   minimumTripTemperature,
   rain,
@@ -255,7 +262,7 @@ function calculateEquipment2({
 };
 
 // Third Function. Written to fix the clothing equipment.
-function calculateEquipment3({
+export function calculateEquipment3({
   camping,
   minimumTripTemperature,
   rain,
@@ -323,13 +330,13 @@ function calculateEquipment3({
                 }
       };
       //Light weight wind stop jacket
-      if (minimumTripTemperature >= 15 && rain==0 && tripLength >0 ) {
+      if (minimumTripTemperature >= 15 && rain===0 && tripLength >0 ) {
         lwindjq=1;
       } else {
         lwindjq=0;
       };
       //water proof rain jacekt goretex shit.
-      if  ( rain==1 && tripLength >0) {
+      if  ( rain===1 && tripLength >0) {
         wpjackq=1;
       } else {
         wpjackq=0;
@@ -437,7 +444,7 @@ function calculateEquipment3({
         neckq=0;
       };
       //towell towell
-      if  ( ( camping == 1 ) && (tripLength >= 2) ) {
+      if  ( ( camping === 1 ) && (tripLength >= 2) ) {
         towellq=1;
       } else {
         towellq=1;
@@ -449,7 +456,11 @@ totalropaw=((tshirtq*tshirtw)+(fleeceq*fleecew)+(lwindjq*lwindjw)+(wpjackq*wpjac
 
 //Resuming totals function here.
 //This part of the code will sum up the weight the ciclist will bring for the trip.
-function calculateEquipment4() {
+export function calculateEquipment4() {
   volumenresume = Math.round((totalropav+totalbikerelatedv+totalelectronicsv+totalhealthbodyv2+totaldocumv+totalcampingv+totalhealthbodyv1));
   weightresume = Math.round((totalropaw+totalbikerelatedw+totalelectronicsw+totalhealthbodyw2+totaldocumw+totalcampingw+totalhealthbodyw1));
 };
+
+
+
+

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { TextField, Button, Select, MenuItem, FormControl, InputLabel } from '@material-ui/core';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Button, Select, MenuItem, FormControl, InputLabel } from '@material-ui/core';
+import { TextField } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
+import * as casefunctions from './casefunctions';
 
 
 interface FormState {
-  minimumTripTemperature: number;
   tripLength: number;
   camping: number;
+  minimumTripTemperature: number;
   rain: number;
 }
 
@@ -55,7 +57,7 @@ const theme = createTheme({
 
 
 const Form = () => {
-  const [formState, setFormState] = useState<FormState>({ tripLength: 0, camping: 1, minimumTripTemperature:5, rain:1 });
+  const [formState, setFormState] = useState<FormState>({ tripLength: 0, camping: 0, minimumTripTemperature:5, rain:0 });
   const [selectedCamping, setSelectedCamping] = useState<number>(1);
   const [selectedRain, setSelectedRain] = useState<number>(1);
 
@@ -84,7 +86,15 @@ const Form = () => {
   const handleSearch = () => {
     setFormState((prevState) => ({ ...prevState, camping: selectedCamping , rain: selectedRain}));
     console.log(formState);
+    runequipment1(formState);
   };
+
+  const runequipment1 = (formData: typeof formState) => {
+    console.log('Received form data:', formData);
+    console.log(casefunctions.calculateEquipment(formData).totalcampingv);
+  }
+
+
 
   return (
     <>
@@ -157,6 +167,14 @@ const Form = () => {
           </div>
         </ThemeProvider>
     </div>
+    <div style={{ display: 'flex', width: '90%', margin: 'auto', marginTop:'20px' }}>
+            <div style={{ backgroundColor: 'gray', borderRadius: '10px', padding: '10px', marginRight: '20px' }}>
+                <p style={{ color: 'black', margin: '0' }}>Total Volume </p>
+            </div>
+            <div style={{ backgroundColor: 'gray', borderRadius: '10px', padding: '10px' }}>
+                <p style={{ color: 'black', margin: '0' }}>Total Weight</p>
+            </div>
+        </div>
     </>
   );
 };
