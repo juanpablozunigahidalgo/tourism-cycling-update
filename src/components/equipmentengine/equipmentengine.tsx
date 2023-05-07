@@ -1,17 +1,17 @@
+//Imports required to run the code.
 import React, { useState } from 'react';
 import { Button, Select, MenuItem, FormControl, InputLabel } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material';
 import * as casefunctions from './casefunctions';
-
-
+//Critical interface to deal with functions.
 interface FormState {
   tripLength: number;
   camping: number;
   minimumTripTemperature: number;
   rain: number;
 }
-
+//Styling
 const theme = createTheme({
   components: {
     MuiTextField: {
@@ -54,8 +54,7 @@ const theme = createTheme({
     },
   },
 });
-
-
+//Component function. Notice that the Form is a set of functions with state.
 const Form = () => {
   const [formState, setFormState] = useState<FormState>({ tripLength: 0, camping: 0, minimumTripTemperature:5, rain:0 });
   const [selectedCamping, setSelectedCamping] = useState<number>(1);
@@ -66,12 +65,10 @@ const Form = () => {
     setFormState((prevState) => ({ ...prevState, tripLength: parseInt(value) }));
   };
 
-
   const handleMinimumTripTemperatureChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setFormState((prevState) => ({ ...prevState, minimumTripTemperature: parseInt(value) }));
   };
-
 
   const handleCampingChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
     const { value } = event.target;
@@ -91,10 +88,10 @@ const Form = () => {
 
   const runequipment1 = (formData: typeof formState) => {
     console.log('Received form data:', formData);
-    console.log(casefunctions.calculateEquipment(formData).totalcampingv);
-  }
-
-
+    // console.log(casefunctions.calculateEquipment(formData).totalcampingv);
+    const totalvolume = (casefunctions.calculateEquipment(formData).totalcampingv)+(casefunctions.calculateEquipment(formData).totalhealthbodyv1)
+    const totalweight = (casefunctions.calculateEquipment(formData).totalcampingw)+(casefunctions.calculateEquipment(formData).totalhealthbodyw1)
+  };
 
   return (
     <>
