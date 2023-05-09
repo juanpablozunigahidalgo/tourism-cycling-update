@@ -139,7 +139,6 @@ export const calculateEquipment  = ({
 }: Props) => {
   let tentq, matresq, slepbq, pilloq, headq, floorinsq, potq, cupq, utensilq,
     stoveq, canisterq, igniterq, petrolq, detergentq, dishcq, soapq, tbrushq, tpasteq;
-  
   if (camping >= 1 && tripLength >= 2) {
     tentq = 1;
     matresq = 1;
@@ -184,7 +183,6 @@ export const calculateEquipment  = ({
   const totalcampingw = ((tentq*tentw)+(matresq*matresw)+(slepbq*slepbw)+(pilloq*pillow)+(headq*headw)+(floorinsq*floorinsw)+(potq*potw)+(cupq*cupw)+(utensilq*utensilw)+(stoveq*stovew)+(canisterq*canisterw)+(igniterq*igniterw)+(petrolq*petrolw)+(detergentq*detergentw)+(dishcq*dishcw))/1000;
   const totalhealthbodyv1=((soapq*soapv)+(tbrushq*tbrushv)+(tpasteq*tpastev));
   const totalhealthbodyw1=((soapq*soapw)+(tbrushq*tbrushw)+(tpasteq*tpastew))/1000;
-
   return {
     totalcampingv,
     totalcampingw,
@@ -212,7 +210,6 @@ export const calculateEquipment2  = ({
  var pbankq;
  var suncq;
  var lightfirstaidq;
- 
  if ( tripLength >= 1 ){
        docuq=1;
        phoneq=1;
@@ -248,7 +245,6 @@ export const calculateEquipment2  = ({
     suncq=1;
   } else {
     suncq=0;
-    
   };
 //poner aqui la suma del equipo
  totalbikerelatedv=((helmq*helmv)+(multitq*multitv)+(stubeq*stubev)+(pumpq*pumpv)+(sgoogleq*sgooglev)+(tubefixq*tubefixv)+(leverq*leverv));
@@ -270,7 +266,6 @@ export const calculateEquipment2  = ({
   totaldocumw,
  };
 };
-
 // Third Function. Written to fix the clothing equipment.
 export const calculateEquipment3  = ({
   tripLength,
@@ -378,10 +373,8 @@ export const calculateEquipment3  = ({
       //light weight pants lwpant
       if  ( (minimumTripTemperature <= 7) && (tripLength > 1) ) {
         lwpantq=1;
-
         } else {
         lwpantq=0;
-
       };
       //ski pant ski
       if  ( (minimumTripTemperature < 0) && (tripLength > 0) ) {
@@ -466,17 +459,13 @@ return {
   totalropav,
   totalropaw,
 };
-
-
 };
 
 //Resuming totals function here.
 //This part of the code will sum up the weight the ciclist will bring for the trip.
 export function calculateEquipment4() {
-  
   volumenresume = Math.round((totalropav+totalbikerelatedv+totalelectronicsv+totalhealthbodyv2+totaldocumv+totalcampingv+totalhealthbodyv1));
   weightresume = Math.round((totalropaw+totalbikerelatedw+totalelectronicsw+totalhealthbodyw2+totaldocumw+totalcampingw+totalhealthbodyw1));
-
   return {
     volumenresume,
     weightresume
