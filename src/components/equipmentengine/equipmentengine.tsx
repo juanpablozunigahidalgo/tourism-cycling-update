@@ -168,13 +168,8 @@ const Form = () => {
     setSelecteddocumentsweight(Math.round(documentsweight));
     setSelectedropavolume(Math.round(ropavolume));
     setSelectedropaweight(Math.round(ropaweight)); 
-
-
-
     return {campingvolume, campingweight,healthvolume,healthweight,bikeequipmentvolume,bikeequipmentweight,electronicsvolume,electronicsweight,documentsvolume,documentsweight,ropavolume,ropaweight};
   };
-
-
 
   return (
     <>
@@ -259,7 +254,9 @@ const Form = () => {
             <div style={{ backgroundColor: 'gray', borderRadius: '10px', padding: '10px' }}>
                 <p style={{ color: 'black', margin: '0' }}>Total Weight: {selectedtotalweight !== 0 ? selectedtotalweight : "-"} [Kg]</p>
             </div>
-        </div>
+    </div>
+
+
     </>
   );
 };

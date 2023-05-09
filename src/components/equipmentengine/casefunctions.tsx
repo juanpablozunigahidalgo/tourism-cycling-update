@@ -131,6 +131,8 @@ export interface Props {
     tripLength: number;
   }
 //First Function. 
+//This function resumes the camping equipment required for camping. 
+//Notice it only depends if the user is going to camp or not. And the trip lenght.
 export const calculateEquipment  = ({
   tripLength,
   camping,
@@ -191,6 +193,7 @@ export const calculateEquipment  = ({
   };
 };
 //Second Function
+  
 export const calculateEquipment2  = ({
   tripLength,
   camping,
