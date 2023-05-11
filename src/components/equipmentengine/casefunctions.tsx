@@ -185,11 +185,38 @@ export const calculateEquipment  = ({
   const totalcampingw = ((tentq*tentw)+(matresq*matresw)+(slepbq*slepbw)+(pilloq*pillow)+(headq*headw)+(floorinsq*floorinsw)+(potq*potw)+(cupq*cupw)+(utensilq*utensilw)+(stoveq*stovew)+(canisterq*canisterw)+(igniterq*igniterw)+(petrolq*petrolw)+(detergentq*detergentw)+(dishcq*dishcw))/1000;
   const totalhealthbodyv1=((soapq*soapv)+(tbrushq*tbrushv)+(tpasteq*tpastev));
   const totalhealthbodyw1=((soapq*soapw)+(tbrushq*tbrushw)+(tpasteq*tpastew))/1000;
+
+  //Lets create an specific table. 
+
+  const tableData = [
+    { itemName: "Camping tent", quantity:  tentq , itemweight: tentw , itemvolume:tentv },
+    { itemName: "Air Matress", quantity: matresq , itemweight: matresw , itemvolume: matresv },
+    { itemName: "Sleeping Bag", quantity: slepbq , itemweight: slepbw , itemvolume: slepbv },
+    { itemName: "Infatable Pillow", quantity: pilloq , itemweight: pillow , itemvolume: pillov },
+    { itemName: "Head Lamp", quantity: headq , itemweight: headw , itemvolume: headv },
+    { itemName: "Floor insulator", quantity: floorinsq , itemweight: floorinsw , itemvolume: floorinsv },
+    { itemName: "Camping Pot", quantity: potq , itemweight: potw , itemvolume: potv },
+    { itemName: "Camping Cup", quantity: cupq , itemweight: cupw , itemvolume: cupv },
+    { itemName: "Utensil set", quantity: utensilq , itemweight: utensilw , itemvolume: utensilv },
+    { itemName: "Stove", quantity: stoveq , itemweight: stovew , itemvolume: stovev },
+    { itemName: "Canister", quantity: canisterq  , itemweight: canisterw , itemvolume: canisterv },
+    { itemName: "Igniter", quantity: igniterq  , itemweight: igniterw , itemvolume: igniterv },
+    { itemName: "Petrol", quantity: petrolq  , itemweight: petrolw , itemvolume: petrolv },
+    { itemName: "Detergent", quantity: detergentq , itemweight: detergentw , itemvolume: detergentv },
+    { itemName: "Dish wash liquid", quantity: dishcq , itemweight: dishcw , itemvolume: dishcv },
+    { itemName: "Soap", quantity: soapq , itemweight: soapw , itemvolume: soapv },
+    { itemName: "Toothbrush", quantity: tbrushq , itemweight: tbrushw , itemvolume: tbrushv },
+    { itemName: "Toothpaste", quantity: tpasteq , itemweight: tpastew , itemvolume: tpastev },
+
+  ].filter((item) => item.quantity > 0);
+
+
   return {
     totalcampingv,
     totalcampingw,
     totalhealthbodyv1,
     totalhealthbodyw1,
+    tableData
   };
 };
 //Second Function

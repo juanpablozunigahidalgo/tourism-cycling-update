@@ -5,7 +5,15 @@ import { TextField } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material';
 import * as casefunctions from './casefunctions';
 import './equipmentengine.scss';
+import PieChartComponentvolume from './piechartcomponentvolume';
+import { Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 
+type TableDataItem = {
+  itemName: string;
+  quantity: number;
+  itemweight: number;
+  itemvolume: number;
+};
 
 //Critical interface to deal with functions.
 interface FormState {
@@ -79,6 +87,19 @@ const Form = () => {
   const [selectedeldocumentsweight, setSelecteddocumentsweight] = useState<number>(0);
   const [selectedropavolume, setSelectedropavolume] = useState<number>(0);
   const [selectedropaweight, setSelectedropaweight] = useState<number>(0);
+  //State Variables for table display section
+  //Camping sub-table
+  const [tablecampingData, setCampingData] = useState<TableDataItem[]>([]);
+  //Health sub-table
+  const [tablehealthData, setHealthData] = useState([]); 
+  //Bike sub-table
+  const [tablebikeData, setBikeData] = useState([]); 
+  //Electronics sub-table
+  const [tableelectrocnisData, setElectrocnisData] = useState([]);
+  //Documents sub-table
+  const [tabledocumentsData, setDocumentsData] = useState([]);
+  //clothing sub-table
+  const [tableclothingData, setClothingData] = useState([]);
 
   //health/bike/electronics/documents/
 
@@ -103,13 +124,12 @@ const Form = () => {
   };
 
   const handleSearch = () => {
-    setFormState((prevState) => ({ ...prevState, camping: selectedCamping , rain: selectedRain}));
-    console.log(formState);
     calctotalequipment(formState);
+    calcspecificsequipment(formState);
+    setFormState((prevState) => ({ ...prevState, camping: selectedCamping , rain: selectedRain}));
   };
 //This function sums up the equipment volume.
   const calctotalequipment = (formData: typeof formState) => {
-    console.log('Received form data:', formData);
     // console.log(casefunctions.calculateEquipment(formData).totalcampingv);
     const totalvolume = Math.round((casefunctions.calculateEquipment(formData).totalcampingv)+
     (casefunctions.calculateEquipment(formData).totalhealthbodyv1)+
@@ -136,8 +156,9 @@ const Form = () => {
   //This function resumes the equipment split.
   //camping/health/bike/electronics/documents/
   const calcspecificsequipment = (formData: typeof formState) => {
-    console.log('Received form data:', formData);
     //camping
+  
+    const tableData = (casefunctions.calculateEquipment(formData).tableData);
     const campingvolume = Math.round((casefunctions.calculateEquipment(formData).totalcampingv));
     const campingweight = Math.round((casefunctions.calculateEquipment(formData).totalcampingw));
     //health
@@ -156,18 +177,20 @@ const Form = () => {
     const ropavolume = (casefunctions.calculateEquipment3(formData).totalropav); 
     const ropaweight = (casefunctions.calculateEquipment3(formData).totalropaw); 
     //now it sets state for each variable. 
-    setSelectedcampingvolume(Math.round(campingvolume));
-    setSelectedcampingweight(Math.round(campingweight));
-    setSelectedhealthvolume(Math.round(healthvolume));
-    setSelectedhealthweight(Math.round(healthweight));
-    setSelectedbikerelatedvolume(Math.round(bikeequipmentvolume));
-    setSelectedbikerelatedweight(Math.round(bikeequipmentweight));
-    setSelectedelectronicsvolume(Math.round(electronicsvolume));
-    setSelectedelectronicsweight(Math.round(electronicsweight));
-    setSelecteddocumentsvolume(Math.round(documentsvolume));
-    setSelecteddocumentsweight(Math.round(documentsweight));
-    setSelectedropavolume(Math.round(ropavolume));
-    setSelectedropaweight(Math.round(ropaweight)); 
+    setCampingData(tableData);
+    setSelectedcampingvolume((campingvolume));
+    setSelectedcampingweight((campingweight));
+    setSelectedhealthvolume((healthvolume));
+    setSelectedhealthweight((healthweight));
+    setSelectedbikerelatedvolume((bikeequipmentvolume));
+    setSelectedbikerelatedweight((bikeequipmentweight));
+    setSelectedelectronicsvolume((electronicsvolume));
+    setSelectedelectronicsweight((electronicsweight));
+    setSelecteddocumentsvolume((documentsvolume));
+    setSelecteddocumentsweight((documentsweight));
+    setSelectedropavolume((ropavolume));
+    setSelectedropaweight((ropaweight)); 
+    console.log(selectedcampingvolume);
     return {campingvolume, campingweight,healthvolume,healthweight,bikeequipmentvolume,bikeequipmentweight,electronicsvolume,electronicsweight,documentsvolume,documentsweight,ropavolume,ropaweight};
   };
 
@@ -255,8 +278,40 @@ const Form = () => {
                 <p style={{ color: 'black', margin: '0' }}>Total Weight: {selectedtotalweight !== 0 ? selectedtotalweight : "-"} [Kg]</p>
             </div>
     </div>
-
-
+    <div>
+    {/* <PieChartComponentvolume selectedcampingvolume={selectedcampingvolume} selectedhealthvolume={selectedhealthvolume} selectedbikerelatedvolume={selectedbikerelatedvolume} selectedelectronicsvolume={selectedelectronicsvolume} selectedeldocumentsvolume={selectedeldocumentsvolume} selectedropavolume={selectedropavolume}></PieChartComponentvolume> */}
+    
+    </div>
+    {/* Here is the table section div */}
+    <div style={{
+              paddingLeft: '5%',
+              paddingRight: '5%',
+          }}>
+    {/* camping section table */}
+      <div> 
+          <h1>Camping Equipment details.</h1>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Item</TableCell>
+                  <TableCell>Quantity</TableCell>
+                  <TableCell>Weight [Kg] </TableCell>
+                  <TableCell>Volume [Lt] </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {tablecampingData.map((item: TableDataItem) => (
+                  <TableRow key={item.itemName}>
+                    <TableCell>{item.itemName}</TableCell>
+                    <TableCell>{item.quantity}</TableCell>
+                    <TableCell>{item.itemweight}</TableCell>
+                    <TableCell>{item.itemvolume}</TableCell>
+                </TableRow>
+                ))}
+              </TableBody>
+          </Table>
+      </div>
+    </div>
     </>
   );
 };

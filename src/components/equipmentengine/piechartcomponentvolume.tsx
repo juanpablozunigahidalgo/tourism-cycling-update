@@ -1,17 +1,14 @@
 import React from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 interface Props {
   selectedcampingvolume: number;
   selectedhealthvolume: number;
-  selectedbikerelatedvolume:number;
-  selectedelectronicsvolume:number;
-  selectedeldocumentsvolume:number;
+  selectedbikerelatedvolume: number;
+  selectedelectronicsvolume: number;
+  selectedeldocumentsvolume: number;
   selectedropavolume: number;
-
 }
-
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
 
 const PieChartComponentvolume: React.FC<Props> = ({
   selectedcampingvolume,
@@ -19,7 +16,7 @@ const PieChartComponentvolume: React.FC<Props> = ({
   selectedbikerelatedvolume,
   selectedelectronicsvolume,
   selectedeldocumentsvolume,
-  selectedropavolume
+  selectedropavolume,
 }) => {
   const data = [
     { name: "Camping Volume", value: selectedcampingvolume },
@@ -30,10 +27,36 @@ const PieChartComponentvolume: React.FC<Props> = ({
     { name: "Clothing Volume", value: selectedropavolume },
   ];
 
-  // Check if any input variable is null or 0
-  const shouldRender = selectedcampingvolume && selectedhealthvolume && selectedbikerelatedvolume && selectedelectronicsvolume && selectedeldocumentsvolume && selectedropavolume;
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#AF19FF", "#82C1F7"];
 
-  return shouldRender ? (
+  const RADIAN = Math.PI / 180;
+
+  const renderCustomizedLabel = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    percent,
+  }: any) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+      <text
+        x={x}
+        y={y}
+        fill="white"
+        textAnchor="middle"
+        dominantBaseline="central"
+      >
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
+
+  return (
     <PieChart width={400} height={400}>
       <Pie
         data={data}
@@ -43,27 +66,16 @@ const PieChartComponentvolume: React.FC<Props> = ({
         cy="50%"
         outerRadius={80}
         fill="#8884d8"
+        labelLine={false}
+        label={renderCustomizedLabel}
       >
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
+      <Tooltip />
     </PieChart>
-  ) : null;
+  );
 };
 
 export default PieChartComponentvolume;
-
-
-
-// const [selectedcampingvolume, setSelectedcampingvolume] = useState<number>(0);
-
-//   const [selectedhealthvolume, setSelectedhealthvolume] = useState<number>(0);
-
-//   const [selectedbikerelatedvolume, setSelectedbikerelatedvolume] = useState<number>(0);
-
-//   const [selectedelectronicsvolume, setSelectedelectronicsvolume] = useState<number>(0);
-
-//   const [selectedeldocumentsvolume, setSelecteddocumentsvolume] = useState<number>(0);
-
-//   const [selectedropavolume, setSelectedropavolume] = useState<number>(0);
