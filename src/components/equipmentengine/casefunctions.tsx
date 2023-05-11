@@ -207,10 +207,7 @@ export const calculateEquipment  = ({
     { itemName: "Soap", quantity: soapq , itemweight: soapw , itemvolume: soapv },
     { itemName: "Toothbrush", quantity: tbrushq , itemweight: tbrushw , itemvolume: tbrushv },
     { itemName: "Toothpaste", quantity: tpasteq , itemweight: tpastew , itemvolume: tpastev },
-
   ].filter((item) => item.quantity > 0);
-
-
   return {
     totalcampingv,
     totalcampingw,
@@ -234,13 +231,13 @@ export const calculateEquipment2  = ({
   var sgoogleq;
   var tubefixq;
   var leverq;
- var docuq;
- var phoneq;
- var chargerq;
- var pbankq;
- var suncq;
- var lightfirstaidq;
- if ( tripLength >= 1 ){
+  var docuq;
+  var phoneq;
+  var chargerq;
+  var pbankq;
+  var suncq;
+  var lightfirstaidq;
+  if ( tripLength >= 1 ){
        docuq=1;
        phoneq=1;
        lightfirstaidq=1;
@@ -276,15 +273,33 @@ export const calculateEquipment2  = ({
   } else {
     suncq=0;
   };
-//poner aqui la suma del equipo
- totalbikerelatedv=((helmq*helmv)+(multitq*multitv)+(stubeq*stubev)+(pumpq*pumpv)+(sgoogleq*sgooglev)+(tubefixq*tubefixv)+(leverq*leverv));
- totalbikerelatedw=((helmq*helmw)+(multitq*multitw)+(stubeq*stubew)+(pumpq*pumpw)+(sgoogleq*sgooglew)+(tubefixq*tubefixw)+(leverq*leverw))/1000;
- totalelectronicsv=((phoneq*phonev)+(chargerq*chargerv)+(pbankq*pbankv));
- totalelectronicsw=((phoneq*phonew)+(chargerq*chargerw)+(pbankq*pbankw))/1000;
- totalhealthbodyv2=((suncq*suncv)+(lightfirstaidq*lightfirstaidv));
- totalhealthbodyw2=((suncq*suncw)+(lightfirstaidq*lightfirstaidw))/1000;
- totaldocumv=((docuq*docuv));
- totaldocumw=((docuq*docuw))/1000;
+  //poner aqui la suma del equipo
+  totalbikerelatedv=((helmq*helmv)+(multitq*multitv)+(stubeq*stubev)+(pumpq*pumpv)+(sgoogleq*sgooglev)+(tubefixq*tubefixv)+(leverq*leverv));
+  totalbikerelatedw=((helmq*helmw)+(multitq*multitw)+(stubeq*stubew)+(pumpq*pumpw)+(sgoogleq*sgooglew)+(tubefixq*tubefixw)+(leverq*leverw))/1000;
+  totalelectronicsv=((phoneq*phonev)+(chargerq*chargerv)+(pbankq*pbankv));
+  totalelectronicsw=((phoneq*phonew)+(chargerq*chargerw)+(pbankq*pbankw))/1000;
+  totalhealthbodyv2=((suncq*suncv)+(lightfirstaidq*lightfirstaidv));
+  totalhealthbodyw2=((suncq*suncw)+(lightfirstaidq*lightfirstaidw))/1000;
+  totaldocumv=((docuq*docuv));
+  totaldocumw=((docuq*docuw))/1000;
+//Aqui va la tabla con los valores. 
+  const tableData = [
+    { itemName: "Helmet", quantity:  helmq , itemweight: helmw , itemvolume:helmv },
+    { itemName: "Multi Tool", quantity: multitq , itemweight: multitw , itemvolume: multitv },
+    { itemName: "Standard Tube", quantity: stubeq , itemweight: stubew , itemvolume: stubev },
+    { itemName: "Air Pump", quantity: pumpq , itemweight: pumpw , itemvolume: pumpv },
+    { itemName: "Cycling Googles", quantity: sgoogleq , itemweight: sgooglew , itemvolume: sgooglev },
+    { itemName: "Tube Fix Kit", quantity: tubefixq , itemweight: tubefixw , itemvolume: tubefixv },
+    { itemName: "Bike Tube Levers", quantity: leverq , itemweight: leverw , itemvolume: leverv },
+    { itemName: "Wallet. With you documents", quantity: docuq , itemweight: docuw , itemvolume: docuv },
+    { itemName: "Phone", quantity: phoneq , itemweight: phonew , itemvolume: phonev },
+    { itemName: "Phone Charger", quantity: chargerq, itemweight:  chargerw , itemvolume: chargerv },
+    { itemName: "Power Bank", quantity: pbankq  , itemweight: pbankw , itemvolume: pbankv },
+    { itemName: "SunScreen", quantity: suncq  , itemweight: suncw , itemvolume: suncv },
+    { itemName: "First Aid Kit", quantity: lightfirstaidq  , itemweight: lightfirstaidw , itemvolume: lightfirstaidv },
+  ].filter((item) => item.quantity > 0);
+
+
  return {
   totalbikerelatedv,
   totalbikerelatedw,
@@ -294,6 +309,7 @@ export const calculateEquipment2  = ({
   totalhealthbodyw2,
   totaldocumv,
   totaldocumw,
+  tableData
  };
 };
 // Third Function. Written to fix the clothing equipment.
@@ -485,9 +501,33 @@ export const calculateEquipment3  = ({
 //poner aqui la suma del equipo
 totalropav=((tshirtq*tshirtv)+(fleeceq*fleecev)+(lwindjq*lwindjv)+(wpjackq*wpjackv)+(tjackq*tjackv)+(fllegsq*fllegsv)+(flsleevsq*flsleevsv)+(lwpantq*lwpantv)+(skiq*skiv)+(shortq*shortv)+(boxerq*boxerv)+(socketq*socketv)+(gloveq*glovev)+(shoeq*shoev)+(capq*capv)+(feetq*feetv)+(neckq*neckv)+(towellq*towellv));
 totalropaw=((tshirtq*tshirtw)+(fleeceq*fleecew)+(lwindjq*lwindjw)+(wpjackq*wpjackw)+(tjackq*tjackw)+(fllegsq*fllegsw)+(flsleevsq*flsleevsw)+(lwpantq*lwpantw)+(skiq*skiw)+(shortq*shortw)+(boxerq*boxerw)+(socketq*socketw)+(gloveq*glovew)+(shoeq*shoew)+(capq*capw)+(feetq*feetw)+(neckq*neckw)+(towellq*towellw))/1000;
+//Tabla con la informacion de las cantidades. 
+const tableData = [
+  { itemName: "T-shirt", quantity:  tshirtq , itemweight: tshirtw , itemvolume:tshirtv },
+  { itemName: "Fleece", quantity: fleeceq , itemweight: fleecew , itemvolume: fleecev },
+  { itemName: "Light Wind Jacket", quantity: lwindjq , itemweight: lwindjw , itemvolume: lwindjv },
+  { itemName: "Water Proof Jacket", quantity: wpjackq, itemweight: wpjackw , itemvolume: wpjackv },
+  { itemName: "Thermal Jacket", quantity: tjackq , itemweight: tjackw , itemvolume: tjackv },
+  { itemName: "First Layer Leg", quantity: fllegsq , itemweight: fllegsw , itemvolume: fllegsv },
+  { itemName: "First Layer Sleeve", quantity: flsleevsq , itemweight: flsleevsw , itemvolume: flsleevsv },
+  { itemName: "Light Weight Pant", quantity: lwpantq , itemweight: lwpantw , itemvolume: lwpantv},
+  { itemName: "Sky Pant", quantity: skiq , itemweight: skiw , itemvolume: skiv },
+  { itemName: "Short Pant", quantity: shortq, itemweight:  shortw , itemvolume: shortv },
+  { itemName: "Interior Clothing", quantity: boxerq , itemweight: boxerw , itemvolume: boxerv },
+  { itemName: "Socket", quantity: socketq  , itemweight: socketw , itemvolume: socketv },
+  { itemName: "Gloves", quantity: gloveq  , itemweight: glovew , itemvolume: glovev },
+  { itemName: "Shoes", quantity: shoeq  , itemweight: shoew , itemvolume: shoev },
+  { itemName: "Thermal Cap", quantity: capq , itemweight: capw , itemvolume: capv },
+  { itemName: "Thermal Feet Cover", quantity: feetq  , itemweight: feetw , itemvolume: feetv },
+  { itemName: "Neck Wind protection", quantity: neckq , itemweight: neckw , itemvolume: neckv},
+  { itemName: "Neck Wind protection", quantity: towellq , itemweight: towellw , itemvolume: towellv},
+].filter((item) => item.quantity > 0);
+
+
 return {
   totalropav,
   totalropaw,
+  tableData 
 };
 };
 
