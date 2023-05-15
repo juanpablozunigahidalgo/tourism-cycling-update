@@ -133,7 +133,7 @@ export interface Props {
 //First Function. 
 //This function resumes the camping equipment required for camping. 
 //Notice it only depends if the user is going to camp or not. And the trip lenght.
-export const calculateEquipment  = ({
+export const calculateEquipment1  = ({
   tripLength,
   camping,
   minimumTripTemperature,
@@ -522,7 +522,6 @@ const tableData = [
   { itemName: "Neck Wind protection", quantity: neckq , itemweight: neckw , itemvolume: neckv},
   { itemName: "Neck Wind protection", quantity: towellq , itemweight: towellw , itemvolume: towellv},
 ].filter((item) => item.quantity > 0);
-
 
 return {
   totalropav,

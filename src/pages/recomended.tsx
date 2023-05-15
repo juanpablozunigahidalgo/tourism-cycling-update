@@ -4,25 +4,23 @@ import Box from '@mui/material/Box';
 import theme from '../styles/main/typography';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
-import SearchForm from '../components/mapengine/inputmapb';
-import Titler from '../components/pagetitle/pagetitleroute';
+import RecommendedApps from '../components/recomended/recomended';
 
-const Routecost = (): JSX.Element => {
+
+const Recomended = (): JSX.Element => {
   return (
-    
-    <ThemeProvider theme={theme}> 
+    <ThemeProvider theme={theme}>
       <Box
         display="flex"
         flexDirection="column"
         minHeight="60vh"
       >
         <Header />
-        <Titler></Titler>
-        <SearchForm></SearchForm>
+        <RecommendedApps></RecommendedApps>
         <Footer />
       </Box>
     </ThemeProvider>
   );
 };
 
-export default Routecost;
+export default Recomended;

@@ -23,7 +23,7 @@ const boxData = [
     },
     {
       text: 'Recomended Apps',
-      link: '/recomendedapps',
+      link: '/recomended',
     }
   ];
   
