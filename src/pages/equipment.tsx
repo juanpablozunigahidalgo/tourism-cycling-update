@@ -8,7 +8,7 @@ import Formequipment from '../components/equipmentengine/equipmentengine';
 
 const styles = {
   textDiv: {
-    color: 'black',
+    color: '#142952',
     backgroundColor: 'white',
     paddingLeft: '4rem',
     fontFamily: 'Consolas',
@@ -30,12 +30,12 @@ const Equipment = (): JSX.Element => {
   return (
 
     <ThemeProvider theme={theme}> 
+      <Header />
       <Box
         display="flex"
         flexDirection="column"
         minHeight="60vh"
       >
-        <Header />
         <div style={styles.textDiv}>
           <h1 style={styles.title}>Equipment calculator</h1>
           {/* <h3 style={styles.subtitle}>Tools for touring cyclists.</h3> */}

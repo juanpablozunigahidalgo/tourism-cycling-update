@@ -12,17 +12,17 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '& .MuiInputBase-input': {
-            color: 'black', // Change input text color
+            color: '#142952', // Change input text color
           },
           '& .MuiInputLabel-root': {
-            color: 'black', // Change input label color
+            color: '#142952', // Change input label color
             '&.Mui-focused': {
-              color: 'black', // Change input label color on focus
+              color: '#142952', // Change input label color on focus
             },
           },
           '& .MuiOutlinedInput-root': {
             '&.Mui-focused fieldset': {
-              borderColor: 'black', // Change border color on focus
+              borderColor: '#142952', // Change border color on focus
             },
           },
         },
@@ -32,17 +32,17 @@ const theme = createTheme({
       styleOverrides: {
         outlined: {
           '&:hover:not(.Mui-disabled):before': {
-            borderColor: 'black', // Change select menu border color on hover
+            borderColor: '#142952', // Change select menu border color on hover
           },
           '&:before': {
-            borderColor: 'black', // Change select menu border color
+            borderColor: '#142952', // Change select menu border color
           },
           '&.Mui-focused fieldset': {
-            borderColor: 'black', // Change border color on focus
+            borderColor: '#142952', // Change border color on focus
           },
         },
         icon: {
-          color: 'black', // Change select menu icon color
+          color: '#142952', // Change select menu icon color
         },
       },
     },
@@ -133,6 +133,7 @@ const SearchForm: React.FC<Props> = () => {
               paddingRight: '5%',
               maxWidth: '500px',
               minHeight: '200px',
+              color:'#142952',
           }}
       >
           <ThemeProvider theme={theme}>
@@ -227,7 +228,7 @@ const SearchForm: React.FC<Props> = () => {
           </Grid>
           </ThemeProvider>
       </div>
-      <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
+      <div style={{ color:'#142952', paddingBottom: '20px', paddingTop: '20px' }}>
       <DistanceCalculator initialAddress={initialAddress} destinationAddress={destinationAddress} travelingMode={travelingMode} estimatedAverageSpeed={estimatedAverageSpeed} estimatedHoursPerDayCycling={estimatedHoursPerDayCycling} restingDays={restingDays} budgetPerDay={budgetPerDay} ></DistanceCalculator>    
       </div>
       <div>

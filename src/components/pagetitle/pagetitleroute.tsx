@@ -2,7 +2,7 @@ import React from 'react';
 
 const styles = {
   textDiv: {
-    color: 'black',
+    color: '#142952',
     backgroundColor: 'white',
     paddingLeft: '4rem',
     fontFamily: 'Consolas',

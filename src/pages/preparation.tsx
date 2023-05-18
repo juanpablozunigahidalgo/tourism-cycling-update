@@ -7,7 +7,7 @@ import Footer from '../components/footer/footer';
 
 const styles = {
   textDiv: {
-    color: 'black',
+    color: '#142952',
     backgroundColor: 'white',
     paddingLeft: '4rem',
     fontFamily: 'Consolas',
@@ -30,6 +30,7 @@ const Preparation = (): JSX.Element => {
         display="flex"
         flexDirection="column"
         minHeight="60vh"
+        color="#142952"
       >
         <Header />
         <div style={styles.textDiv}>

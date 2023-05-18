@@ -28,17 +28,17 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '& .MuiInputBase-input': {
-            color: '#000000', // Change input text color
+            color: '#142952', // Change input text color
           },
           '& .MuiInputLabel-root': {
-            color: '#000000', // Change input label color
+            color: '#142952', // Change input label color
             '&.Mui-focused': {
-              color: '#000000', // Change input label color on focus
+              color: '#142952', // Change input label color on focus
             },
           },
           '& .MuiOutlinedInput-root': {
             '&.Mui-focused fieldset': {
-              borderColor: '#000000', // Change border color on focus
+              borderColor: '#142952', // Change border color on focus
             },
           },
         },
@@ -48,17 +48,17 @@ const theme = createTheme({
       styleOverrides: {
         outlined: {
           '&:hover:not(.Mui-disabled):before': {
-            borderColor: '#000000', // Change select menu border color on hover
+            borderColor: '#142952', // Change select menu border color on hover
           },
           '&:before': {
-            borderColor: '#000000', // Change select menu border color
+            borderColor: '#142952', // Change select menu border color
           },
           '&.Mui-focused fieldset': {
-            borderColor: '#000000', // Change border color on focus
+            borderColor: '#142952', // Change border color on focus
           },
         },
         icon: {
-          color: '#000000', // Change select menu icon color
+          color: '#142952', // Change select menu icon color
         },
       },
     },
@@ -211,7 +211,7 @@ const Form = () => {
               placeholder="Enter in number of days"
               onChange={handleTripLengthChange}
               name="tripLength"
-              style={{ marginBottom: '1rem', border:'#000000'}}
+              style={{ marginBottom: '1rem', color: '#142952', borderColor:'#142952'}}
               onKeyPress={(event) => {
                 const charCode = event.which ? event.which : event.keyCode;
                 if (charCode < 48 ) {
@@ -228,19 +228,19 @@ const Form = () => {
               value={formState.minimumTripTemperature}
               onChange={handleMinimumTripTemperatureChange}
               name="tripLength"
-              style={{ marginBottom: '1rem' }}
+              style={{ marginBottom: '1rem' ,color: '#142952', borderColor:'#142952'}}
             />
             <FormControl margin="normal" >
               <Select
                 value={selectedCamping}
                 onChange={handleCampingChange}
                 variant="outlined"
-                style={{ marginBottom: '0rem' }}
+                style={{ marginBottom: '0rem' , color: '#142952'}}
                 inputProps={{
-                  style: { color: 'black', border: '1px solid black' },
+                  style: { color: '#142952'},
                 }}
               >
-                <MenuItem value={1}>Yes- I will camp during the route.</MenuItem>
+                <MenuItem value={1} >Yes- I will camp during the route.</MenuItem>
                 <MenuItem value={0}>No - I will not camp during the route.</MenuItem>
               </Select>
             </FormControl>
@@ -252,7 +252,7 @@ const Form = () => {
                 variant="outlined"
                 style={{ marginBottom: '0rem' }}
                 inputProps={{
-                  style: { color: 'black', border: '1px solid black' },
+                  style: { color: '#142952'},
                 }} displayEmpty
               >
                 <MenuItem value={1}>Yes- It will rain on the route.</MenuItem>
@@ -260,7 +260,7 @@ const Form = () => {
               </Select>
             </FormControl>
             <Button variant="contained"
-                            style={{ marginTop: '18px', backgroundColor: 'gray', color: 'black', maxWidth: '200px' }} onClick={handleSearch}>
+                            style={{ marginTop: '18px', backgroundColor: '#142952', color: 'white', maxWidth: '200px' }} onClick={handleSearch}>
               Search
             </Button>
           </div>
@@ -268,10 +268,10 @@ const Form = () => {
     </div>
     <div style={{ width: '90%', margin: 'auto', marginTop: '5%' }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-        <div style={{ minWidth: '300px', backgroundColor: 'gray', borderRadius: '10px', padding: '10px', marginBottom: '10px' }}>
+        <div style={{ color:'white', minWidth: '300px', backgroundColor: '#142952', borderRadius: '10px', padding: '10px', marginBottom: '10px' }}>
           <p>Total volume: {selectedtotalvolume !== 0 ? selectedtotalvolume : "-"} [Liter]</p>
         </div>
-        <div style={{ minWidth: '300px', backgroundColor: 'gray', borderRadius: '10px', padding: '10px' }}>
+        <div style={{color:'white', minWidth: '300px', backgroundColor: '#142952', borderRadius: '10px', padding: '10px' }}>
           <p>Total Weight: {selectedtotalweight !== 0 ? selectedtotalweight : "-"} [Kg]</p>
         </div>
     </div>
@@ -284,6 +284,7 @@ const Form = () => {
               paddingLeft: '5%',
               paddingRight: '5%',
               paddingTop: '5%' ,
+              color: '#142952',
           }}>
     {/* camping section table */}
       <div> 
