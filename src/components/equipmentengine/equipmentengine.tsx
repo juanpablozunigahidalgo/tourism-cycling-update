@@ -205,7 +205,7 @@ const Form = () => {
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <TextField
               variant="outlined" fullWidth
-              label="Trip Length"
+              label="Trip Length [Days]"
               type="number"
               value={formState.tripLength}
               placeholder="Enter in number of days"
