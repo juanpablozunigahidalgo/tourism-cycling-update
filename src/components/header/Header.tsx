@@ -18,13 +18,13 @@ const Header = () => {
     <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', boxShadow: 'none' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1, justifyContent: 'flex-end' }}>
-          <Button color="inherit" sx={{ color: 'black', backgroundColor: '#EEEEEE', marginRight: '4rem' }}>Login</Button>
+          <Button color="inherit" sx={{ color: 'white', backgroundColor: '#142952', marginRight: '4rem' }}>Login</Button>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ color: 'black' }}
+            sx={{ color: '#142952' }}
             onClick={handleMenuOpen}
           >
             <MenuIcon />
@@ -36,14 +36,14 @@ const Header = () => {
           onClose={handleMenuClose}
           sx={{ right: 0 }}
         >
-          <MenuItem onClick={handleMenuClose}>Home</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Route & Cost Calculator</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Equipment Calculator</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Preparation</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Bike Check</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Knowledge</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Recomended Apps</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Home</MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Route & Cost Calculator</MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Equipment Calculator</MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Preparation</MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Bike Check</MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Knowledge</MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Recomended Apps</MenuItem>
+          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Profile</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>

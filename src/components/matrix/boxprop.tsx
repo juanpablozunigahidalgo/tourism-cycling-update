@@ -19,13 +19,13 @@ const BoxGrid: React.FC<Props> = ({ boxData }) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                bgcolor: 'grey.200',
+                bgcolor: '#193366',
                 borderRadius: 4,
                 boxShadow: 'none',
                 overflow: 'hidden',
                 transition: 'transform 0.2s ease-in-out',
                 '&:hover': {
-                  bgcolor: 'grey.300',
+                  bgcolor: '#24478f',
                   boxShadow: 'none',
                   transform: 'scale(1.02)',
                 },
@@ -36,7 +36,7 @@ const BoxGrid: React.FC<Props> = ({ boxData }) => {
               style={{ cursor: 'pointer' }}
             >
               <Box sx={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, p: 2 }}>
-                <div style={{ color: 'black', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', fontFamily: 'Consolas, monospace' }}>
+                <div style={{ color: 'white', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', fontFamily: 'Consolas, monospace' }}>
                   {box.text}
                 </div>
               </Box>
