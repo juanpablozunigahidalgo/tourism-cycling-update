@@ -8,6 +8,7 @@ import Equipment from './pages/equipment';
 import Recomended from './pages/recomended';
 import Preparation from './pages/preparation';
 import Bikecheck from './pages/bikecheck';
+import Knowledge from './pages/knowledge';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/recomended" element={<Recomended />} />
         <Route path="/preparation" element={<Preparation />} />
         <Route path="/bikecheck" element={<Bikecheck />} />
+        <Route path="/knowledge" element={<Knowledge />} />
       </Routes>
     </Router>
   );

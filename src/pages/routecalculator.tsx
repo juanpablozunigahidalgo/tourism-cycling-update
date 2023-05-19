@@ -16,10 +16,10 @@ const Routecost = (): JSX.Element => {
         flexDirection="column"
         minHeight="60vh"
       >
-        <Header />
+        <Header/>
         <Titler></Titler>
         <SearchForm></SearchForm>
-        <Footer />
+        <Footer/>
       </Box>
     </ThemeProvider>
   );

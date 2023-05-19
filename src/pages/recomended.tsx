@@ -14,6 +14,8 @@ const Recomended = (): JSX.Element => {
         display="flex"
         flexDirection="column"
         minHeight="60vh"
+        color="#142952"
+        fontFamily="Consolas" 
       >
         <Header />
         <RecommendedApps></RecommendedApps>
