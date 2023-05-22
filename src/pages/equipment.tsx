@@ -1,4 +1,5 @@
 import '../App.css';
+import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import theme from '../styles/main/typography';
@@ -28,17 +29,16 @@ const styles = {
 
 const Equipment = (): JSX.Element => {
   return (
-
+    
     <ThemeProvider theme={theme}> 
-      <Header />
       <Box
         display="flex"
         flexDirection="column"
         minHeight="60vh"
       >
+        <Header />
         <div style={styles.textDiv}>
           <h1 style={styles.title}>Equipment calculator</h1>
-          {/* <h3 style={styles.subtitle}>Tools for touring cyclists.</h3> */}
         </div>
         <Formequipment></Formequipment>
         <Footer />

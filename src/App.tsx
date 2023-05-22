@@ -9,6 +9,12 @@ import Recomended from './pages/recomended';
 import Preparation from './pages/preparation';
 import Bikecheck from './pages/bikecheck';
 import Knowledge from './pages/knowledge';
+import Injuries from './pages/knowledge/injuries';
+import Bikemechanics from './pages/knowledge/bikemechanics';
+import Biomechanics from './pages/knowledge/biomechanics';
+import Accidentsandprevention from './pages/knowledge/accidentsandprevention';
+import Nutrition from './pages/knowledge/nutrition';
+import Training from './pages/knowledge/training';
 
 function App() {
   return (
@@ -24,6 +30,12 @@ function App() {
         <Route path="/preparation" element={<Preparation />} />
         <Route path="/bikecheck" element={<Bikecheck />} />
         <Route path="/knowledge" element={<Knowledge />} />
+        <Route path="/knowledge/injuries" element={<Injuries />} />
+        <Route path="/knowledge/bikemechanics" element={<Bikemechanics />} />
+        <Route path="/knowledge/biomechanics" element={<Biomechanics />} />
+        <Route path="/knowledge/accidentsandprevention" element={<Accidentsandprevention />} />
+        <Route path="/knowledge/nutrition" element={<Nutrition />} />
+        <Route path="/knowledge/training" element={<Training />} />
       </Routes>
     </Router>
   );

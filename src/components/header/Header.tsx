@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -36,14 +37,14 @@ const Header = () => {
           onClose={handleMenuClose}
           sx={{ right: 0 }}
         >
-          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Home</MenuItem>
-          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Route & Cost Calculator</MenuItem>
-          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Equipment Calculator</MenuItem>
-          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Preparation</MenuItem>
-          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Bike Check</MenuItem>
-          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Knowledge</MenuItem>
-          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Recomended Apps</MenuItem>
-          <MenuItem onClick={handleMenuClose} sx={{ color: '#142952' }}>Profile</MenuItem>
+          <MenuItem component={Link} to="/" onClick={handleMenuClose} sx={{ color: '#142952' }}>Home</MenuItem>
+          <MenuItem component={Link} to="/route" onClick={handleMenuClose} sx={{ color: '#142952' }}>Route & Cost Calculator</MenuItem>
+          <MenuItem component={Link} to="/equipment" onClick={handleMenuClose} sx={{ color: '#142952' }}>Equipment Calculator</MenuItem>
+          <MenuItem component={Link} to="/preparation" onClick={handleMenuClose} sx={{ color: '#142952' }}>Preparation</MenuItem>
+          <MenuItem component={Link} to="/bikecheck" onClick={handleMenuClose} sx={{ color: '#142952' }}>Bike Check</MenuItem>
+          <MenuItem component={Link} to="/knowledge" onClick={handleMenuClose} sx={{ color: '#142952' }}>Knowledge</MenuItem>
+          <MenuItem component={Link} to="/recomended" onClick={handleMenuClose} sx={{ color: '#142952' }}>Recommended Apps</MenuItem>
+          <MenuItem component={Link} to="/" onClick={handleMenuClose} sx={{ color: '#142952' }}>Profile</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
