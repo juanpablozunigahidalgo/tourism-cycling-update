@@ -12,6 +12,7 @@ type TableDataItem = {
   quantity: number;
   itemweight: number;
   itemvolume: number;
+  itemlink: string;
 };
 
 //Critical interface to deal with functions.
@@ -302,7 +303,7 @@ const Form = () => {
                 <h3>Camping</h3>
                 {tablecampingData.map((item: TableDataItem) => (
                   <TableRow key={item.itemName}>
-                    <TableCell>{item.itemName}</TableCell>
+                    <TableCell><a href={item.itemlink}>{item.itemName}</a></TableCell>
                     <TableCell>{item.quantity}</TableCell>
                     <TableCell>{item.itemweight/1000}</TableCell>
                     <TableCell>{item.itemvolume}</TableCell>
@@ -313,7 +314,7 @@ const Form = () => {
               <h3>Bike related</h3>
                 {tablebikeData.map((item: TableDataItem) => (
                   <TableRow key={item.itemName}>
-                    <TableCell>{item.itemName}</TableCell>
+                    <TableCell><a href={item.itemlink}>{item.itemName}</a></TableCell>
                     <TableCell>{item.quantity}</TableCell>
                     <TableCell>{item.itemweight/1000}</TableCell>
                     <TableCell>{item.itemvolume}</TableCell>
@@ -324,7 +325,7 @@ const Form = () => {
                 <h3>Clothing</h3>
                 {tableclothingData.map((item: TableDataItem) => (
                   <TableRow key={item.itemName}>
-                    <TableCell>{item.itemName}</TableCell>
+                    <TableCell><a href={item.itemlink}>{item.itemName}</a></TableCell>
                     <TableCell>{item.quantity}</TableCell>
                     <TableCell>{item.itemweight/1000}</TableCell>
                     <TableCell>{item.itemvolume}</TableCell>

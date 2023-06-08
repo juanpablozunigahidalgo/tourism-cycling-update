@@ -284,19 +284,19 @@ export const calculateEquipment2  = ({
   totaldocumw=((docuq*docuw))/1000;
 //Aqui va la tabla con los valores. 
   const tableData = [
-    { itemName: "Helmet", quantity:  helmq , itemweight: helmw , itemvolume:helmv , itemlink: "" },
-    { itemName: "Multi Tool", quantity: multitq , itemweight: multitw , itemvolume: multitv , itemlink: ""},
-    { itemName: "Standard Tube", quantity: stubeq , itemweight: stubew , itemvolume: stubev , itemlink: ""},
-    { itemName: "Air Pump", quantity: pumpq , itemweight: pumpw , itemvolume: pumpv, itemlink: "" },
-    { itemName: "Cycling Googles", quantity: sgoogleq , itemweight: sgooglew , itemvolume: sgooglev , itemlink: ""},
-    { itemName: "Tube Fix Kit", quantity: tubefixq , itemweight: tubefixw , itemvolume: tubefixv , itemlink: "" },
-    { itemName: "Bike Tube Levers", quantity: leverq , itemweight: leverw , itemvolume: leverv , itemlink: ""},
+    { itemName: "Helmet", quantity:  helmq , itemweight: helmw , itemvolume:helmv , itemlink: "https://www.amazon.se/gp/product/B01MDNOLQ0/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B01MDNOLQ0&linkCode=as2&tag=tourismcycling-21&linkId=693aaa61576615fc9cdc2c330b28ee3c" },
+    { itemName: "Multi Tool", quantity: multitq , itemweight: multitw , itemvolume: multitv , itemlink: "https://www.amazon.se/Vevarmbr%C3%B6der-multi-17-verktyg-cykelverktyg-underh%C3%A5ll/dp/B000S6HZCC/ref=sr_1_8?keywords=bike+multitool&qid=1686234176&sprefix=bike+multi%2Caps%2C117&sr=8-8"},
+    { itemName: "Standard Tube", quantity: stubeq , itemweight: stubew , itemvolume: stubev , itemlink: "https://www.amazon.se/Continental-Bike-Inner-Presta-cykelventil/dp/B00ZIKEWG0/ref=sr_1_6?crid=2NJQB6SS8WY50&keywords=bike+tube&qid=1686234217&sprefix=bike+tube%2Caps%2C107&sr=8-6"},
+    { itemName: "Air Pump", quantity: pumpq , itemweight: pumpw , itemvolume: pumpv, itemlink: "https://www.amazon.se/gp/product/B002CIAFJO/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B002CIAFJO&linkCode=as2&tag=tourismcycling-21&linkId=8e8abd5b2212410e0c406577dafc2cbc" },
+    { itemName: "Cycling Googles", quantity: sgoogleq , itemweight: sgooglew , itemvolume: sgooglev , itemlink: "https://www.amazon.se/Dr%C3%A4ger-Skyddsglas%C3%B6gon-8320-s%C3%A4kerhetsglas%C3%B6gon-byggarbetsplats/dp/B0088WQ9AW/ref=sr_1_15?crid=1K38ZI7CE5DW9&keywords=safety+google&qid=1686234276&sprefix=safety+google%2Caps%2C107&sr=8-15"},
+    { itemName: "Tube Fix Kit", quantity: tubefixq , itemweight: tubefixw , itemvolume: tubefixv , itemlink: "https://www.amazon.se/cykeld%C3%A4ckslappar-Puncture-sj%C3%A4lvh%C3%A4ftande-vulkaniseringspl%C3%A5ster-cykelreparationsverktyg/dp/B0BFLWRVS1/ref=sr_1_14?crid=HERQ8APGWLD5&keywords=bike+tube+fix+kit&qid=1686234330&sprefix=bike+tube+fix+kit%2Caps%2C94&sr=8-14" },
+    { itemName: "Bike Tube Levers", quantity: leverq , itemweight: leverw , itemvolume: leverv , itemlink: "https://www.amazon.se/Jinlaili-rostfritt-j%C3%A4rnbytesverktyg-reparationsverktyg-reparationsbyte/dp/B08DCPZBRP/ref=sr_1_3?crid=TS39SFVOCMMP&keywords=bike+tube+levers&qid=1686234354&sprefix=bike+tube+levers%2Caps%2C96&sr=8-3"},
     { itemName: "Wallet. With you documents", quantity: docuq , itemweight: docuw , itemvolume: docuv , itemlink: ""},
-    { itemName: "Phone", quantity: phoneq , itemweight: phonew , itemvolume: phonev ,itemlink: ""},
+    { itemName: "Phone", quantity: phoneq , itemweight: phonew , itemvolume: phonev ,itemlink: "https://www.amazon.se/Blackview-BV4900-Smartphone-unlocked-Branding/dp/B08MC5RS76/ref=sr_1_1?crid=3EAIAUUB6IKJL&keywords=smartphone+outdoor+proof&qid=1686234413&sprefix=smartphone+outdoor+proof%2Caps%2C97&sr=8-1"},
     { itemName: "Phone Charger", quantity: chargerq, itemweight:  chargerw , itemvolume: chargerv , itemlink: ""},
-    { itemName: "Power Bank", quantity: pbankq  , itemweight: pbankw , itemvolume: pbankv , itemlink: ""},
+    { itemName: "Power Bank", quantity: pbankq  , itemweight: pbankw , itemvolume: pbankv , itemlink: "https://www.amazon.se/B%C3%A4rbar-Snabbladdningsbatteril%C3%A5da-mobiltelefonh%C3%A5llare-L%C3%B6dningssats-Sp%C3%A4nningsing%C3%A5ng/dp/B08BYPDTBJ/ref=sr_1_23?crid=3KUG9PR6A12WH&keywords=battery+bank+phone&qid=1686234457&sprefix=batery+bank+phone%2Caps%2C101&sr=8-23"},
     { itemName: "SunScreen", quantity: suncq  , itemweight: suncw , itemvolume: suncv , itemlink: ""},
-    { itemName: "First Aid Kit", quantity: lightfirstaidq  , itemweight: lightfirstaidw , itemvolume: lightfirstaidv ,itemlink: "" },
+    { itemName: "First Aid Kit", quantity: lightfirstaidq  , itemweight: lightfirstaidw , itemvolume: lightfirstaidv ,itemlink: "https://www.amazon.se/GoLab-Erste-Hilfe-Outdoor-Notfallbeatmungsmaske/dp/B073SWW6BJ/ref=sr_1_1_sspa?crid=1AD3WQ1D23S2O&keywords=first+aid+kit&qid=1686234497&sprefix=first+aid+kit%2Caps%2C117&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" },
   ].filter((item) => item.quantity > 0);
 
 
@@ -503,24 +503,24 @@ totalropav=((tshirtq*tshirtv)+(fleeceq*fleecev)+(lwindjq*lwindjv)+(wpjackq*wpjac
 totalropaw=((tshirtq*tshirtw)+(fleeceq*fleecew)+(lwindjq*lwindjw)+(wpjackq*wpjackw)+(tjackq*tjackw)+(fllegsq*fllegsw)+(flsleevsq*flsleevsw)+(lwpantq*lwpantw)+(skiq*skiw)+(shortq*shortw)+(boxerq*boxerw)+(socketq*socketw)+(gloveq*glovew)+(shoeq*shoew)+(capq*capw)+(feetq*feetw)+(neckq*neckw)+(towellq*towellw))/1000;
 //Tabla con la informacion de las cantidades. 
 const tableData = [
-  { itemName: "T-shirt", quantity:  tshirtq , itemweight: tshirtw , itemvolume:tshirtv , itemlink: "" },
-  { itemName: "Fleece", quantity: fleeceq , itemweight: fleecew , itemvolume: fleecev , itemlink: "" },
-  { itemName: "Light Wind Jacket", quantity: lwindjq , itemweight: lwindjw , itemvolume: lwindjv , itemlink: "" },
-  { itemName: "Water Proof Jacket", quantity: wpjackq, itemweight: wpjackw , itemvolume: wpjackv , itemlink: "" },
-  { itemName: "Thermal Jacket", quantity: tjackq , itemweight: tjackw , itemvolume: tjackv , itemlink: "" },
-  { itemName: "First Layer Leg", quantity: fllegsq , itemweight: fllegsw , itemvolume: fllegsv , itemlink: "" },
-  { itemName: "First Layer Sleeve", quantity: flsleevsq , itemweight: flsleevsw , itemvolume: flsleevsv , itemlink: "" },
-  { itemName: "Light Weight Pant", quantity: lwpantq , itemweight: lwpantw , itemvolume: lwpantv, itemlink: "" },
-  { itemName: "Sky Pant", quantity: skiq , itemweight: skiw , itemvolume: skiv , itemlink: "" },
-  { itemName: "Short Pant", quantity: shortq, itemweight:  shortw , itemvolume: shortv , itemlink: "" },
+  { itemName: "T-shirt", quantity:  tshirtq , itemweight: tshirtw , itemvolume:tshirtv , itemlink: "https://www.amazon.co.uk/gp/product/B07CRFYWV3/ref=as_li_tl?ie=UTF8&tag=tourismcycl0d-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=B07CRFYWV3&linkId=1fa19f09b46ccaeb6f855408bc764187" },
+  { itemName: "Fleece", quantity: fleeceq , itemweight: fleecew , itemvolume: fleecev , itemlink: "https://www.amazon.co.uk/gp/product/B00TGUD40I/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=B00TGUD40I&linkCode=as2&tag=tourismcycl0d-21&linkId=95004a01dc40214fcccdf52e9f17c371" },
+  { itemName: "Light Wind Jacket", quantity: lwindjq , itemweight: lwindjw , itemvolume: lwindjv , itemlink: "https://www.amazon.se/Craft-Essence-Light-Wind-cykeljacka/dp/B07Z4BK4ZD/ref=sr_1_1?crid=2IT47NAF43YP5&keywords=light+wind+jacket&qid=1686234627&sprefix=light+wind+jacekt%2Caps%2C90&sr=8-1" },
+  { itemName: "Water Proof Jacket", quantity: wpjackq, itemweight: wpjackw , itemvolume: wpjackv , itemlink: "https://www.amazon.se/gp/product/B008B38OUG/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B008B38OUG&linkCode=as2&tag=tourismcycling-21&linkId=f8e3e0bf8a764a7b0d57f6b2cc9c9f4e" },
+  { itemName: "Thermal Jacket", quantity: tjackq , itemweight: tjackw , itemvolume: tjackv , itemlink: "https://www.amazon.se/Fj%C3%A4llr%C3%A4ven-Expedition-Down-No-1-Parka/dp/B082P4CTNH/ref=sr_1_34?keywords=fj%C3%A4llr%C3%A4ven+jacka&qid=1686234727&sprefix=FJ%C3%84LLR%C3%84VEN+ja%2Caps%2C97&sr=8-34" },
+  { itemName: "First Layer Leg", quantity: fllegsq , itemweight: fllegsw , itemvolume: fllegsv , itemlink: "https://www.amazon.co.uk/SKYSPER-Thermal-Underwear-Compression-TU054/dp/B0B7JKKTK4/ref=sr_1_11?crid=HKMZSY1F9WGW&keywords=first+layer+kit+man+ski&qid=1686234773&sprefix=first+layer+kit+man+ski%2Caps%2C95&sr=8-11" },
+  { itemName: "First Layer Sleeve", quantity: flsleevsq , itemweight: flsleevsw , itemvolume: flsleevsv , itemlink: "https://www.amazon.co.uk/SKYSPER-Thermal-Underwear-Compression-TU054/dp/B0B7JKKTK4/ref=sr_1_11?crid=HKMZSY1F9WGW&keywords=first+layer+kit+man+ski&qid=1686234773&sprefix=first+layer+kit+man+ski%2Caps%2C95&sr=8-11" },
+  { itemName: "Light Weight Pant", quantity: lwpantq , itemweight: lwpantw , itemvolume: lwpantv, itemlink: "https://www.amazon.co.uk/Mountain-Warehouse-Downpour-Mens-Trousers/dp/B00S7O6S2K/ref=sr_1_3?crid=SI68JRHE2U9O&keywords=wind+stop+pant&qid=1686234825&sprefix=wind+stop+pant%2Caps%2C111&sr=8-3" },
+  { itemName: "Sky Pant", quantity: skiq , itemweight: skiw , itemvolume: skiv , itemlink: "https://www.amazon.co.uk/EKLENTSON-Resistant-Trousers-Mountain-Pockets/dp/B08NP7G5VN/ref=sr_1_23_sspa?crid=3L1UVEO8NNC6C&keywords=ski+trousers+man+waterproof+mountain&qid=1686234951&sprefix=ski+trousers+man+waterproof+mountain%2Caps%2C94&sr=8-23-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1&smid=A3J4TIOYH8KQL6" },
+  { itemName: "Short Pant", quantity: shortq, itemweight:  shortw , itemvolume: shortv , itemlink: "https://www.amazon.co.uk/Tansozer-Pockets-Elasticated-Fitness-Black2001/dp/B0BR3WLH5Y/ref=sr_1_4_sspa?crid=3Q314LL26ZESO&keywords=sport+shorts+men&qid=1686235012&sprefix=sport+shorts+men%2Caps%2C101&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" },
   { itemName: "Interior Clothing", quantity: boxerq , itemweight: boxerw , itemvolume: boxerv ,  itemlink: ""},
   { itemName: "Socket", quantity: socketq  , itemweight: socketw , itemvolume: socketv , itemlink: "" },
-  { itemName: "Gloves", quantity: gloveq  , itemweight: glovew , itemvolume: glovev , itemlink: "" },
-  { itemName: "Shoes", quantity: shoeq  , itemweight: shoew , itemvolume: shoev , itemlink: "" },
-  { itemName: "Thermal Cap", quantity: capq , itemweight: capw , itemvolume: capv , itemlink: "" },
-  { itemName: "Thermal Feet Cover", quantity: feetq  , itemweight: feetw , itemvolume: feetv , itemlink: "" },
-  { itemName: "Neck Wind protection", quantity: neckq , itemweight: neckw , itemvolume: neckv , itemlink: "" },
-  { itemName: "Neck Wind protection", quantity: towellq , itemweight: towellw , itemvolume: towellv, itemlink: "" },
+  { itemName: "Gloves", quantity: gloveq  , itemweight: glovew , itemvolume: glovev , itemlink: "https://www.amazon.co.uk/GripGrab-Gloves-black-finger-gloves/dp/B0762GZ3DH/ref=sxin_16_sbv_search_btf?content-id=amzn1.sym.6806b386-5815-48a6-83af-c8f936535f66%3Aamzn1.sym.6806b386-5815-48a6-83af-c8f936535f66&crid=KVU76WNRP08X&cv_ct_cx=cycling+gloves+thermal&keywords=cycling+gloves+thermal&pd_rd_i=B0762GZ3DH&pd_rd_r=790930c2-94d2-4532-b3d8-1d65478ad70b&pd_rd_w=IhYCD&pd_rd_wg=X4mmI&pf_rd_p=6806b386-5815-48a6-83af-c8f936535f66&pf_rd_r=SYC0AZVQ5Q7NHH9ZAN3M&qid=1686235055&sbo=EO%2BcdOgoisx3waG5xqcZQA%3D%3D&sprefix=cycling+gloves+thermal%2Caps%2C112&sr=1-1-9131241a-a358-4619-a7b8-0f5a65d91d81" },
+  { itemName: "Shoes", quantity: shoeq  , itemweight: shoew , itemvolume: shoev , itemlink: "https://www.amazon.co.uk/s?k=shoes+nike&i=sports&crid=29ZOP47XHB716&sprefix=shoes+nike%2Csports%2C124&ref=nb_sb_noss_2" },
+  { itemName: "Thermal Cap", quantity: capq , itemweight: capw , itemvolume: capv , itemlink: "https://www.amazon.co.uk/GripGrab-Windster-cycling-black-Black/dp/B00NNHAVD8/ref=sr_1_8?crid=3MV4RUL5ZA2YU&keywords=thermal+cap+cycling&qid=1686235114&s=sports&sprefix=hermal+cap+cycling%2Csports%2C116&sr=1-8" },
+  { itemName: "Thermal Feet Cover", quantity: feetq  , itemweight: feetw , itemvolume: feetv , itemlink: "https://www.amazon.co.uk/GEBY-Zippered-Windproof-Overshoes-43-black/dp/B085MG3R43/ref=sr_1_4?crid=161YSY1MZWHT2&keywords=thermal+feet+cover+cycling&qid=1686235141&s=sports&sprefix=thermal+feet+cover+cycling%2Csports%2C100&sr=1-4" },
+  { itemName: "Neck Wind protection", quantity: neckq , itemweight: neckw , itemvolume: neckv , itemlink: "https://www.amazon.co.uk/HCX-Multifunctional-Coverings-Balaclava-Windproof/dp/B08NX1C2WJ/ref=sr_1_3?crid=31FUCK6P4V66Q&keywords=neck+wind+stop+cycling&qid=1686235194&s=sports&sprefix=neck+wind+stop+cycling%2Csports%2C92&sr=1-3" },
+  { itemName: "Towell", quantity: towellq , itemweight: towellw , itemvolume: towellv, itemlink: "https://www.amazon.co.uk/4Monster-Microfibre-Lightweight-Absorbent-Swimming/dp/B08JCL797Z/ref=sr_1_1_sspa?crid=19XLQ3LVDWUQ3&keywords=mini+towel&qid=1686235244&s=sports&sprefix=mini+towell%2Csports%2C97&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" },
 ].filter((item) => item.quantity > 0);
 
 return {
