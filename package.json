@@ -1,5 +1,6 @@
 {
   "name": "tourism-cycling-update",
+  "homepage": "https://www.tourismcycling.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,6 +37,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -60,6 +63,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-places-autocomplete": "^7.2.9"
+    "@types/react-places-autocomplete": "^7.2.9",
+    "gh-pages": "^5.0.0"
   }
 }
