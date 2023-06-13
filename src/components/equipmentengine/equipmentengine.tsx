@@ -1,6 +1,6 @@
 //Imports required to run the code.
 import React, { useState } from 'react';
-import { Button, Select, MenuItem, FormControl, InputLabel } from '@material-ui/core';
+import { Button, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import { TextField } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material';
 import * as casefunctions from './casefunctions';
@@ -69,8 +69,8 @@ const theme = createTheme({
 const Form = () => {
   //State variables for input-initial values.
   const [formState, setFormState] = useState<FormState>({ tripLength: 0, camping: 0, minimumTripTemperature:0, rain:0 });
-  const [selectedCamping, setSelectedCamping] = useState<number>(1);
-  const [selectedRain, setSelectedRain] = useState<number>(1);
+  const [selectedCamping, setSelectedCamping] = useState(0);
+  const [selectedRain, setSelectedRain] = useState(0);
   //State variables for caculation-initial values. Overall statistics.
   const [selectedtotalvolume, setSelectedtotalvolume] = useState<number>(0);
   const [selectedtotalweight, setSelectedtotalweight] = useState<number>(0);
@@ -106,14 +106,14 @@ const Form = () => {
     setFormState((prevState) => ({ ...prevState, minimumTripTemperature: parseInt(value) }));
   };
 
-  const handleCampingChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
+  const handleCampingChange = (event: { target: { value: any; }; }) => {
     const { value } = event.target;
-    setSelectedCamping(parseInt(value as string));
+    setSelectedCamping(parseInt(value));
   };
 
-  const handleRainChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
+  const handleRainChange = (event: { target: { value: any; }; }) => {
     const { value } = event.target;
-    setSelectedRain(parseInt(value as string));
+    setSelectedRain(parseInt(value));
   };
 
   const handleSearch = () => {
@@ -260,9 +260,15 @@ const Form = () => {
                 <MenuItem value={0}>No - It will not rain on the route.</MenuItem>
               </Select>
             </FormControl>
-            <Button variant="contained"
-                            style={{ marginTop: '18px', backgroundColor: '#142952', color: 'white', maxWidth: '200px' }} onClick={handleSearch}>
+            <Button
+              variant="contained"
+              style={{ marginTop: '18px', backgroundColor: '#142952', color: 'white', maxWidth: '200px' }}
+              onClick={() => {
+                handleSearch(); // First invocation of handleSearch
+              }}
+            >
               Search
+
             </Button>
           </div>
         </ThemeProvider>
