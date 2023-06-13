@@ -1,14 +1,18 @@
 # About-the-update. 
 
-Long time ago. I developed an html / javascript / website. However. I decedided to move it to react - typescript . 
-The old project remains available at. 
-https://github.com/juanpablozunigahidalgo/toursimcycling.github.io.oldversion
-www.tourismcycling.com
+
+The live version is available at https://www.tourismcycling.com
+The current react typescript for this version repository is available at: 
+https://github.com/juanpablozunigahidalgo/toursimcycling.github.io 
 
 I make this project to apply MUI design libriaries. To build a complete website based on design libriaries instead. 
-The challenge now. For this one. Is to have a user registration page. In which cyclists can register themselves in case optional. 
+The challenge now. For this one. Is to have a user registration page. In which cyclists can register themselves in case optional.I kept minimalistic design principle. And usability focus. 
 
-I kept minimalistic design principle. And usability focus. 
+Long time ago. I developed an html / javascript / website. However. I decedided to move it to react - typescript . 
+The old project remains available at 
+https://github.com/juanpablozunigahidalgo/toursimcycling.github.io.oldversion
+Live page old version: 
+https://juanpablozunigahidalgo.github.io/toursimcycling.github.io.oldversion/
 
 # open-invite
 
