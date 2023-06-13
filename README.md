@@ -2,7 +2,7 @@
 
 Long time ago. I developed an html / javascript / website. However. I decedided to move it to react - typescript . 
 The old project remains available at. 
-https://github.com/juanpablozunigahidalgo/toursimcycling.github.io
+https://github.com/juanpablozunigahidalgo/toursimcycling.github.io.oldversion
 www.tourismcycling.com
 
 I make this project to apply MUI design libriaries. To build a complete website based on design libriaries instead. 
