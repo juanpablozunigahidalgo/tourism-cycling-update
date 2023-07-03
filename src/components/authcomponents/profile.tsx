@@ -1,20 +1,36 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Profile = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const [accessToken, setAccessToken] = useState('');
 
-  if (isLoading) {
-    return <div>Loading ...</div>;
+  useEffect(() => {
+    const getAccessToken = async () => {
+      try {
+        const token = await getAccessTokenSilently();
+        setAccessToken(token);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    if (isAuthenticated) {
+      getAccessToken();
+    }
+  }, [isAuthenticated, getAccessTokenSilently]);
+
+  if (!isAuthenticated) {
+    return <div>Please login to view your profile.</div>;
   }
 
   return (
-    isAuthenticated && user && (
-      <div>
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-      </div>
-    )
+    <div>
+      <h2>Hello {user?.name}</h2>
+      <p>Email: {user?.email}</p>
+      <p>Login Method: {user?.sub?.split('|')[0]}</p>
+      <p>Access Token: {accessToken}</p>
+    </div>
   );
 };
 

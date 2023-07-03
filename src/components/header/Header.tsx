@@ -7,13 +7,14 @@ import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from '../authcomponents/login';
 import LogoutButton from '../authcomponents/logout';
 import { Auth0Provider } from '@auth0/auth0-react';
-import Profile from '../authcomponents/profile';
+import AuthButton from '../authcomponents/loginlogout';
+
 
 const Header = () => {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user, isLoading  } = useAuth0();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const { user, isLoading } = useAuth0();
+
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -35,15 +36,8 @@ const Header = () => {
             }}
           >
           <div className="login">
-              {!isAuthenticated ? (
-                <div>
-                  <LoginButton />
-                </div>
-              ) :
-                <div>
-                <LogoutButton />    
-                </div>}
-            </div>
+          <AuthButton/>    
+          </div>
           {/* <Button color="inherit" sx={{ color: 'white', backgroundColor: '#142952', marginRight: '4rem' }}>Login</Button> */}
           </Auth0Provider>   
           <IconButton
@@ -70,7 +64,7 @@ const Header = () => {
           <MenuItem component={Link} to="/bikecheck" onClick={handleMenuClose} sx={{ color: '#142952' }}>Bike Check</MenuItem>
           <MenuItem component={Link} to="/knowledge" onClick={handleMenuClose} sx={{ color: '#142952' }}>Knowledge</MenuItem>
           <MenuItem component={Link} to="/recomended" onClick={handleMenuClose} sx={{ color: '#142952' }}>Recommended Apps</MenuItem>
-          <MenuItem component={Link} to="/" onClick={handleMenuClose} sx={{ color: '#142952' }}>Profile</MenuItem>
+          <MenuItem component={Link} to="/profile" onClick={handleMenuClose} sx={{ color: '#142952' }}>Profile</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
