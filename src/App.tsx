@@ -15,10 +15,18 @@ import Biomechanics from './pages/knowledge/biomechanics';
 import Accidentsandprevention from './pages/knowledge/accidentsandprevention';
 import Nutrition from './pages/knowledge/nutrition';
 import Training from './pages/knowledge/training';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 function App() {
   return (
-    <Router>
+    
+     <Router><Auth0Provider
+        domain="dev-gpo5cpbi6qdl5wsj.us.auth0.com"
+        clientId="GQPX7QNdmzUXXu9umA78OepNI5yykjcw"
+        authorizationParams={{
+          redirect_uri: window.location.origin
+        }}
+      ></Auth0Provider>
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
@@ -36,6 +44,7 @@ function App() {
         <Route path="/knowledge/accidentsandprevention" element={<Accidentsandprevention />} />
         <Route path="/knowledge/nutrition" element={<Nutrition />} />
         <Route path="/knowledge/training" element={<Training />} />
+        
       </Routes>
     </Router>
   );
