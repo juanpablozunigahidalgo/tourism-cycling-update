@@ -28,18 +28,10 @@ const Header = () => {
     <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', boxShadow: 'none' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1, justifyContent: 'flex-end' }}>
-          <Auth0Provider
-            domain="dev-gpo5cpbi6qdl5wsj.us.auth0.com"
-            clientId="GQPX7QNdmzUXXu9umA78OepNI5yykjcw"
-            authorizationParams={{
-              redirect_uri: window.location.origin
-            }}
-          >
           <div className="login">
           <AuthButton/>    
           </div>
           {/* <Button color="inherit" sx={{ color: 'white', backgroundColor: '#142952', marginRight: '4rem' }}>Login</Button> */}
-          </Auth0Provider>   
           <IconButton
             size="large"
             edge="start"

@@ -13,16 +13,19 @@ const AuthButton = () => {
   };
 
   return (
-    <button style={{
+    <button
+      style={{
         color: 'white',
-          backgroundColor: '#142952',
-          marginRight: '4rem',
-          fontFamily: 'Consolas',
-          border: 'none',
-          borderRadius: '3px',
-          width: '110px',
-          height: '40px'
-        }} onClick={isAuthenticated ? handleLogout : handleLogin}>
+        backgroundColor: '#142952',
+        marginRight: '4rem',
+        fontFamily: 'Consolas',
+        border: 'none',
+        borderRadius: '3px',
+        width: '110px',
+        height: '40px'
+      }}
+      onClick={isAuthenticated ? handleLogout : handleLogin}
+    >
       {isAuthenticated ? 'Logout' : 'Login'}
     </button>
   );

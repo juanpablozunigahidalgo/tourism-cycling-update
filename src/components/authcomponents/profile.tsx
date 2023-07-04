@@ -17,6 +17,7 @@ const Profile = () => {
 
     if (isAuthenticated) {
       getAccessToken();
+      console.log("authenticated")
     }
   }, [isAuthenticated, getAccessTokenSilently]);
 
@@ -26,6 +27,9 @@ const Profile = () => {
 
   return (
     <div>
+      {user?.picture && (
+        <img src={user.picture} alt="Profile Picture" />
+      )}
       <h2>Hello {user?.name}</h2>
       <p>Email: {user?.email}</p>
       <p>Login Method: {user?.sub?.split('|')[0]}</p>

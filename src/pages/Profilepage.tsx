@@ -25,7 +25,7 @@ const styles = {
   },
 };
 
-const Profilepage = (): JSX.Element => {
+const Profilepage = () => {
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -40,8 +40,9 @@ const Profilepage = (): JSX.Element => {
                 <h2 style={styles.title} >Profile Page</h2>
               </div>  
               <div style={{ marginLeft: '5%', fontFamily: 'Consolas' }}>
-              </div>		
               <Profile/>
+              </div>		
+              
         </div>            
         <Footer />
       </Box>
