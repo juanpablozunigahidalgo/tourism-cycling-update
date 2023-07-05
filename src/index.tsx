@@ -15,20 +15,14 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <Auth0Provider
-        domain="dev-gpo5cpbi6qdl5wsj.us.auth0.com"
-        clientId="GQPX7QNdmzUXXu9umA78OepNI5yykjcw"
-        authorizationParams={{
-          redirect_uri: window.location.origin
-        }}
-      >
+  
       <React.StrictMode>
         <Provider store={store}>
           <CssBaseline />
           <App />
         </Provider>
       </React.StrictMode>
-  </Auth0Provider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
