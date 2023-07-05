@@ -19,7 +19,7 @@ import Profilepage from './pages/Profilepage';
 import { useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
-const TRACKING_ID='G-XBCX1RWVBF';
+const TRACKING_ID="G-XBCX1RWVBF";
 ReactGA.initialize(TRACKING_ID);
 
 function App() {

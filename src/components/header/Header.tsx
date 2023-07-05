@@ -31,7 +31,6 @@ const Header = () => {
           <div className="login">
           <AuthButton/>    
           </div>
-          {/* <Button color="inherit" sx={{ color: 'white', backgroundColor: '#142952', marginRight: '4rem' }}>Login</Button> */}
           <IconButton
             size="large"
             edge="start"
