@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const AuthButton = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, getAccessTokenSilently } = useAuth0();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      if (isAuthenticated) {
+        const accessToken = await getAccessTokenSilently();
+        console.log("it is autenticated");
+        console.log(accessToken);
+        if (accessToken) {
+          setIsLoggedIn(true);
+        }
+      }
+    };
+
+    checkAuthentication();
+  }, [isAuthenticated, getAccessTokenSilently]);
 
   const handleLogin = () => {
     loginWithRedirect();
@@ -24,9 +40,9 @@ const AuthButton = () => {
         width: '110px',
         height: '40px'
       }}
-      onClick={isAuthenticated ? handleLogout : handleLogin}
+      onClick={isLoggedIn ? handleLogout : handleLogin}
     >
-      {isAuthenticated ? 'Logout' : 'Login'}
+      {isLoggedIn ? 'Logout' : 'Login'}
     </button>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
@@ -16,8 +16,14 @@ import Accidentsandprevention from './pages/knowledge/accidentsandprevention';
 import Nutrition from './pages/knowledge/nutrition';
 import Training from './pages/knowledge/training';
 import Profilepage from './pages/Profilepage';
+import { useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga';
+
+const TRACKING_ID='G-XBCX1RWVBF';
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
+  ReactGA.pageview(window.location.pathname);
   return (
      <Router>
       <Routes>
