@@ -1,18 +1,12 @@
 # About-the-update. 
 
 
-The live version is available at https://www.tourismcycling.com
-The current react typescript for this version repository is available at: 
-https://github.com/juanpablozunigahidalgo/toursimcycling.github.io 
+The live version of the website can be accessed at https://www.tourismcycling.com. The current repository for this version, built with React and TypeScript, is available at: https://github.com/juanpablozunigahidalgo/toursimcycling.github.io.
 
-I make this project to apply MUI design libriaries. To build a complete website based on design libriaries instead. 
-The challenge now. For this one. Is to have a user registration page. In which cyclists can register themselves in case optional.I kept minimalistic design principle. And usability focus. 
+I created this project to utilize the MUI design libraries and develop a comprehensive website based on these design principles. A future challenge involves implementing a user registration page where cyclists can optionally register themselves, while maintaining a minimalistic design approach and focusing on usability. Currently, the website retrieves data exclusively through Auth0-login for optional profile information.
 
-Long time ago. I developed an html / javascript / website. However. I decedided to move it to react - typescript . 
-The old project remains available at 
-https://github.com/juanpablozunigahidalgo/toursimcycling.github.io.oldversion
-Live page old version: 
-https://juanpablozunigahidalgo.github.io/toursimcycling.github.io.oldversion/
+Previously, I developed a website using HTML, JavaScript, and CSS. However, I decided to migrate it to React with TypeScript. The old version of the project is still accessible at https://github.com/juanpablozunigahidalgo/toursimcycling.github.io.oldversion, and you can view the live page of the old version at https://juanpablozunigahidalgo.github.io/toursimcycling.github.io.oldversion/.
+
 
 # open-invite
 
