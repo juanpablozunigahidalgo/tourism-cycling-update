@@ -31,7 +31,7 @@ function App() {
         domain='dev-gpo5cpbi6qdl5wsj.us.auth0.com'
         clientId='GQPX7QNdmzUXXu9umA78OepNI5yykjcw'
         authorizationParams={{
-          redirect_uri: 'https://tourismcycling.com/home/login/'
+          redirect_uri: 'https://tourismcycling.com/home/login'
         }}
       >
      <Router>
@@ -39,7 +39,6 @@ function App() {
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="*" element={<Navigate to="/home" replace />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/route" element={<Routecost />} />
         <Route path="/equipment" element={<Equipment />} />
         <Route path="/recomended" element={<Recomended />} />
