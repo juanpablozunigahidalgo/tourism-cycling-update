@@ -53,7 +53,7 @@ function App() {
         <Route path="/knowledge/nutrition" element={<Nutrition />} />
         <Route path="/knowledge/training" element={<Training />} />
         <Route path="/profile" element={<Profilepage />} />
-        <Route path="/home/login/*" element={<Home />} />
+        <Route path="/home/*" element={<Home />} />
       </Routes>
     </Router>
     </Auth0Provider>
