@@ -33,7 +33,6 @@ const Profile = () => {
       <h2>Hello {user?.name}</h2>
       <p>Email: {user?.email}</p>
       <p>Login Method: {user?.sub?.split('|')[0]}</p>
-      <p>Access Token: {accessToken}</p>
     </div>
   );
 };
