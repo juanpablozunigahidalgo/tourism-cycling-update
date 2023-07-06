@@ -31,7 +31,7 @@ function App() {
         domain='dev-gpo5cpbi6qdl5wsj.us.auth0.com'
         clientId='GQPX7QNdmzUXXu9umA78OepNI5yykjcw'
         authorizationParams={{
-          redirect_uri: 'https://tourismcycling.com/home'
+          redirect_uri: 'https://tourismcycling.com/home/login'
         }}
       >
      <Router>
