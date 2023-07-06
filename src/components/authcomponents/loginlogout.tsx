@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const AuthButton = () => {
-  const { isAuthenticated, loginWithRedirect, logout, getAccessTokenSilently } = useAuth0();
+  const { isAuthenticated, loginWithRedirect,loginWithPopup, logout, getAccessTokenSilently } = useAuth0();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const AuthButton = () => {
   }, [isAuthenticated, getAccessTokenSilently]);
 
   const handleLogin = () => {
-    loginWithRedirect();
+    loginWithPopup();
   };
 
   const handleLogout = () => {
